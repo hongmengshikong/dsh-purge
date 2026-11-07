@@ -3,7 +3,7 @@
  * 发布门禁：对一个钉死的宿主快照跑 patchStatus，要求「必需补丁」全绿。
  *
  * 判定口径（对应 1 宿主 : 1 插件）：
- *   必需补丁（optional !== true）→ 必须 applied，否则 gate 失败、不发版
+ *   必需补丁（optional !== true）→ 必须可打（applied 或 pending），否则 gate 失败、不发版
  *   可选补丁（optional === true）→ 未命中只记录，不挡发版
  *   文件在本宿主上不存在的补丁（如未安装的 hooks/liangshen 插件）→ 单独列出，不计入 gate
  *
@@ -55,8 +55,11 @@ for (const p of patches) {
 }
 
 const required = rows.filter((r) => !r.optional && r.pinned);
-const requiredFail = required.filter((r) => r.status !== "applied");
-const optionalMiss = rows.filter((r) => r.optional && r.status !== "applied" && r.status !== "na");
+// 快照是「未打补丁的原始宿主」：pending = pattern 命中、可以打；applied = 已打过。
+// 真正意义上的失败是 drifted（官方原文变了）/ unmatched / missing_file。
+const APPLICABLE = new Set(["applied", "pending"]);
+const requiredFail = required.filter((r) => !APPLICABLE.has(r.status));
+const optionalMiss = rows.filter((r) => r.optional && !APPLICABLE.has(r.status) && r.status !== "na");
 const absentFiles = rows.filter((r) => !r.pinned);
 
 // 宿主升版检测：本机安装 vs manifest
@@ -123,5 +126,6 @@ if (asJson) {
 }
 
 process.exit(requiredFail.length === 0 ? 0 : 1);
+
 
 

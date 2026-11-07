@@ -14,6 +14,8 @@ import { copyFileSync, existsSync, mkdirSync, readFileSync, statSync, writeFileS
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import * as core from "../lib/core.js";
+import { writeHostIndex } from "./lib/host-index.mjs";
+import { stableCapturedAt } from "./lib/manifest-stamp.mjs";
 
 const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const arg = (name, fallback) => {
@@ -102,22 +104,11 @@ const manifest = {
 	files,
 };
 mkdirSync(outDir, { recursive: true });
-writeFileSync(path.join(outDir, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
+const manifestPath = path.join(outDir, "manifest.json");
+manifest.capturedAt = stableCapturedAt(manifestPath, manifest);
+writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
 
-// 双向索引：hostVersion <-> pluginVersion（plugin 版本取当前 package.json，发版时随之变化）
-const pkg = JSON.parse(readFileSync(path.join(ROOT, "package.json"), "utf8"));
-const indexPath = path.join(OUT_ROOT, "index.json");
-const index = existsSync(indexPath) ? JSON.parse(readFileSync(indexPath, "utf8")) : { schema: "dsh-purge/host-index@1", hosts: {} };
-index.hosts[dshVersion] = {
-	manifest: `hosts/${dshVersion}/manifest.json`,
-	pluginVersion: pkg.version,
-	dshTarget: pkg.dshTarget || "",
-	files: manifest.counts.files,
-	bytes: manifest.counts.bytes,
-	capturedAt: manifest.capturedAt,
-};
-index.hosts = Object.fromEntries(Object.entries(index.hosts).sort(([a], [b]) => a.localeCompare(b)));
-writeFileSync(indexPath, `${JSON.stringify(index, null, 2)}\n`, "utf8");
+const index = writeHostIndex(ROOT);
 
 console.log(
 	JSON.stringify(
@@ -126,9 +117,12 @@ console.log(
 			out: path.relative(ROOT, outDir),
 			counts: manifest.counts,
 			packages: Object.keys(packages).length,
-			index: path.relative(ROOT, indexPath),
+			index: "hosts/index.json",
+			pinned: index?.hosts?.[dshVersion]?.pinned ?? false,
 		},
 		null,
 		2,
 	),
 );
+
+

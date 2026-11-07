@@ -1,0 +1,516 @@
+{
+  "schema": "dsh-purge/host-snapshot@1",
+  "hostVersion": "0.2.1-rc.5",
+  "source": "npm",
+  "fetchedFrom": "0.2.2-rc.1",
+  "capturedAt": "2026-11-07T17:54:13.275Z",
+  "installRoot": null,
+  "packages": {
+    "@deepseek-ai/dsh-acp-app": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-agent-instructions": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-agent-loop": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-api-session-controller": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-app-boot": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-base": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-client-ui-conversation": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-client-ui-deliverables": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-compaction-tool-result-pruner": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-experimental-auto-review": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-fs-observation-policy": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-fs-sandbox": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-harness-dev-context": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-headless": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-llm-deepseek": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-permission-presets": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-persona": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-repeat-tool-reminder": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-sandbox": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-sandbox-local": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-sandbox-policy": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-sdk-app": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-sdk-minimal": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-session": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-session-format-v0-to-v1": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-session-log-deepseek": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-session-reference": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-settings": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-skill-badge": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-subagent": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-system-prompt": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-tool-bash": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-tool-fs": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-tool-pwsh": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-tool-subagent": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-tool-todo": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-tool-web": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-tools": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-user-approval": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-web-app": "0.2.1-rc.5",
+    "@earendil-works/pi-ai": "1.5.0"
+  },
+  "counts": {
+    "files": 57,
+    "host": 57,
+    "external": 0,
+    "bytes": 2781996
+  },
+  "missing": [],
+  "files": [
+    {
+      "key": "preset-acp-app",
+      "bytes": 499,
+      "sha256": "b2191971be86e253c4a53b27aaa5951a36b31721abad4fbd2e06352f2898cfa0",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-acp-app/cordis.patch.yml",
+      "abs": null
+    },
+    {
+      "key": "agent-instructions",
+      "bytes": 60147,
+      "sha256": "4011f6e4c08228601bd4348ac78e322913142264f6e491ffdf9dcfda97393988",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-agent-instructions/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "agent-loop",
+      "bytes": 74599,
+      "sha256": "cf57e3ecd487ac5c2553455aaa5cef2c6fb41e6bd61be5aa455675d1d7193033",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-agent-loop/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "api-session-controller",
+      "bytes": 132150,
+      "sha256": "a9801acb577b03053c5d5a3191ff555c5f1d791d0acddec113bea4511e33b386",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-api-session-controller/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "app-boot",
+      "bytes": 203572,
+      "sha256": "5135179ac810e4f626f32ec3bdc3293dc7d2028e8aa92e5e0c006f1a33b78e76",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-app-boot/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "base",
+      "bytes": 20932,
+      "sha256": "a2cc57868a4d016609801e28781262515483dde29b41c2742d9a3b27a6f52f77",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-base/cordis.patch.yml",
+      "abs": null
+    },
+    {
+      "key": "base-package",
+      "bytes": 6127,
+      "sha256": "d6d38552b5307dc0230e15cf9ce928ef97ba50ed9887edaa119747a170316721",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-base/package.json",
+      "abs": null
+    },
+    {
+      "key": "conversation-client",
+      "bytes": 782943,
+      "sha256": "cfbd9fd95b0509f7c93a22a62a67ebc10481c8eda611704ea50c2e195b9a5a69",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-client-ui-conversation/lib/client.js",
+      "abs": null
+    },
+    {
+      "key": "deliverables-prompt",
+      "bytes": 12644,
+      "sha256": "5cb1f07a7691e08510f890cc21afec836b4e5c6a9372b1c346a96092f9169b0d",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-client-ui-deliverables/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "compaction-tool-result-pruner",
+      "bytes": 7570,
+      "sha256": "e86442e9a2403c392482b9035916e5610c251d62f3581892866404d69c064254",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-compaction-tool-result-pruner/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "auto-review",
+      "bytes": 23971,
+      "sha256": "14b0fec944f734a888468b75ee9d7ae121383f018ce5bf76c4506393a910787f",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-experimental-auto-review/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "fs-observation-policy",
+      "bytes": 3983,
+      "sha256": "e36b54cdb5c6fa01ccfa29f0433753e810ec1ac29a6a22be349d66b77eb64b03",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-fs-observation-policy/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "fs-sandbox",
+      "bytes": 8047,
+      "sha256": "cac65e21a0f0895b073cb9a447196ac265f2a171cc7f67c7434a6b3b7782caf5",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-fs-sandbox/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "harness-dev-context",
+      "bytes": 7357,
+      "sha256": "c384040ee0aeb3a083f50e0cdd4afe7e6f37baa856c78cee2a496a1843885769",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-harness-dev-context/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "headless",
+      "bytes": 1379,
+      "sha256": "f4d5f53f070089a7fc5209bd47c9ae4e85b99d042cbe76be88ab1ed63dfb8fc8",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-headless/cordis.patch.yml",
+      "abs": null
+    },
+    {
+      "key": "llm-deepseek",
+      "bytes": 121538,
+      "sha256": "21fedb71f8d9aafea73b35ee13bc73737a8271d7ffa261697d4208e8563196cb",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-llm-deepseek/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "permission-presets",
+      "bytes": 16503,
+      "sha256": "4f23c620145098d611d04d8363bc6716f49b26930c9141a21dc9a8df2b72ba63",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-permission-presets/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "permission-presets-types",
+      "bytes": 20395,
+      "sha256": "29c3527fa2b5da0fcea17c7d0d2f068b8a3288bee7755df9e704e2d3d2f1ffa6",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-permission-presets/lib/types/index.js",
+      "abs": null
+    },
+    {
+      "key": "persona",
+      "bytes": 2163,
+      "sha256": "1e9dd7f0dfd87cbff6486b7ca043d2e1b863a2a56b99106a4bf74831591266d5",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-persona/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "repeat-tool-reminder",
+      "bytes": 93257,
+      "sha256": "d4596638ba6c9c76fbe4277fa3e20e3a345a13a45f167bfc1a88917ef724d65e",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-repeat-tool-reminder/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "sandbox-local",
+      "bytes": 22673,
+      "sha256": "be6e1107871cf8d94c040090b13c405bc833822e2f51ed5280e93eececf762be",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-sandbox-local/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "sandbox-policy",
+      "bytes": 7553,
+      "sha256": "772ca58f0f786d6cb4d839deb621634c31097c13228d81b14e3f3153d0524924",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-sandbox-policy/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "escalation",
+      "bytes": 15210,
+      "sha256": "b56373befbfcfe281c17c8892e9a4b2cdcb96851290b3ed0ff56b08915e2f743",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-sandbox/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "preset-sdk-app",
+      "bytes": 1990,
+      "sha256": "f3b82cf41f2184d7099e393ce1d92ce109a1b76e490e57f7499a1803e540d238",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-sdk-app/cordis.patch.yml",
+      "abs": null
+    },
+    {
+      "key": "preset-sdk-minimal",
+      "bytes": 5636,
+      "sha256": "464ea07c03d3639c2c387fa3a684f5d4001e7ca39f8257b361c604f19487af66",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-sdk-minimal/cordis.patch.yml",
+      "abs": null
+    },
+    {
+      "key": "session-format-v0",
+      "bytes": 104888,
+      "sha256": "1b3bff6aaf28ca62a864cf97b9aa9aa45ab76de5e459f7881ba4bc8de73490b1",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-session-format-v0-to-v1/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "session-log-deepseek",
+      "bytes": 7640,
+      "sha256": "09171c53502b4c4a78a458dea8f94884107bc252239c4d12193acd46951d2e72",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-session-log-deepseek/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "session-log-deepseek-types",
+      "bytes": 10023,
+      "sha256": "a640c86266a4ad6ca093cf8f3719c6e8d9560402821fa3e6fcebb5eccd53351a",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-session-log-deepseek/lib/types/index.js",
+      "abs": null
+    },
+    {
+      "key": "session-reference",
+      "bytes": 32762,
+      "sha256": "f17a18280d3c1843d13b71f94a14b95fcd571955e7729fbac977411df386cf1b",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-session-reference/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "session-reference",
+      "bytes": 24303,
+      "sha256": "2b6bc3ea3315f4da76a693a05f08ba16800ed3cd346336694bc71cb6b4ae01b3",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-session-reference/lib/types/index.js",
+      "abs": null
+    },
+    {
+      "key": "session-reference",
+      "bytes": 3203,
+      "sha256": "05e39228b808a882b1c215dda0e5e28372b16c19e825ff0d5df743c2c05caec1",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-session-reference/lib/types/spill.js",
+      "abs": null
+    },
+    {
+      "key": "session",
+      "bytes": 94982,
+      "sha256": "2f5dd07cb5c744a29abbb8003a8a4cefd9e582c6e2538074ca299a0ddd02a3bf",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-session/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "settings",
+      "bytes": 22636,
+      "sha256": "9432b872597b7a31473072eb38a55979ab23375c76bd1d86d751388a692a0136",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-settings/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "skill-badge",
+      "bytes": 1732,
+      "sha256": "e5b52ecf52c51316a70bf6fd837c8e7369a373960626bc2839661bab581f121d",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-skill-badge/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "subagent",
+      "bytes": 141871,
+      "sha256": "9a9572e70fffdb100deb63326167f32bbf63016ce49c0017495dabcb95b44168",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-subagent/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "subagent-types",
+      "bytes": 10437,
+      "sha256": "6fa8e9926e0c7802376b79e4ef6a7ef5afc9f33f8e72e6757e63666f9467cbb4",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-subagent/lib/types/child-agent.js",
+      "abs": null
+    },
+    {
+      "key": "system-prompt",
+      "bytes": 19817,
+      "sha256": "7be9f7aafbf345d01ddcc12fd297b16e9a1d41283a6a04073b867becca0bf020",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-system-prompt/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "tool-bash",
+      "bytes": 28064,
+      "sha256": "a1215d7bcaf82c0755be48321ef6bb45075f1cb33296d6263009e9d10fd596f6",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-tool-bash/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "tool-fs",
+      "bytes": 49445,
+      "sha256": "b11d3fa50b9042019a91cc38a6abe35d74ed651374278f95e60b42734e079df1",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-tool-fs/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "tool-pwsh",
+      "bytes": 31025,
+      "sha256": "94c7f68c425e62c8006907b3f4fea771935321581fd2327b7ee1f0ba8d15eec1",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-tool-pwsh/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "tool-subagent",
+      "bytes": 33853,
+      "sha256": "de7b10aaf52b1b1616d13a831a9ece1f820b8a6302fe94667f31b6d641b2f46e",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-tool-subagent/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "tool-todo",
+      "bytes": 6602,
+      "sha256": "6baad8bf8e53647319b408cbab0c8c13c0693f65d20b779484c4436f47a6a11b",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-tool-todo/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "tool-web",
+      "bytes": 34229,
+      "sha256": "a8313d4e02c751f79d0f91dceb8dfcaa29e7c7a0299ab0d7f8db65471217b0c8",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-tool-web/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "dsh-tools",
+      "bytes": 162201,
+      "sha256": "1e53932e7c4213ea24a7d87f06960b7a7702cb21f8a5741c97242b4a470a442a",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-tools/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "dsh-tools-types",
+      "bytes": 66231,
+      "sha256": "d8cf8e1400e1b923684324546e46d6408bec140002430150b34099ae95a365c8",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-tools/lib/types/index.js",
+      "abs": null
+    },
+    {
+      "key": "user-approval-code",
+      "bytes": 8478,
+      "sha256": "6a5ad1ba3c3dc3abbbae52e6c8c4463970ee0c1c8988cebb0d5cf2acd17ee90b",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-user-approval/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "user-approval",
+      "bytes": 10684,
+      "sha256": "0b2e00fe1b2cedc9b6349a38e07e26a05a09492da838f069c10b76cf13f6d6e8",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-user-approval/lib/types/index.js",
+      "abs": null
+    },
+    {
+      "key": "web-app",
+      "bytes": 22981,
+      "sha256": "cdceb423fc34c31ceb9c47ef2117a88eeda6fd9cc21f94d58cfd21e7c3e035de",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-web-app/cordis.patch.yml",
+      "abs": null
+    },
+    {
+      "key": "web-app-lib",
+      "bytes": 7844,
+      "sha256": "6662ca712368c56fb8818efa53039ef92ce215a328a76b9cdd5e1bed624a0e84",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-web-app/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "preset-cordis",
+      "bytes": 7406,
+      "sha256": "01b0fc94fd49136b332254a7ae5658e43ffe646f7248047dba65d499cfc74596",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-web-app/presets/cordis.patch.yml",
+      "abs": null
+    },
+    {
+      "key": "preset-minimal",
+      "bytes": 3724,
+      "sha256": "a2a9ba1c9c392a45466708f18bc0aefbf300577f9b544dc06049f73a8a5b3267",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-web-app/presets/minimal.patch.yml",
+      "abs": null
+    },
+    {
+      "key": "preset-ptc",
+      "bytes": 6985,
+      "sha256": "9e355c947bf61c3d2fe9bf3214b386f83c0d99d37579ce22576d4b82cb6e1a2c",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-web-app/presets/ptc.patch.yml",
+      "abs": null
+    },
+    {
+      "key": "agent-preset",
+      "bytes": 6799,
+      "sha256": "0d398d2a6872a73a106cb3bd19303ecccf1637e1fcad4d0bf9d8a72d2c2c68f5",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-web-app/presets/standard.patch.yml",
+      "abs": null
+    },
+    {
+      "key": "preset-standard",
+      "bytes": 6799,
+      "sha256": "0d398d2a6872a73a106cb3bd19303ecccf1637e1fcad4d0bf9d8a72d2c2c68f5",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-web-app/presets/standard.patch.yml",
+      "abs": null
+    },
+    {
+      "key": "pi-ai-anthropic-messages",
+      "bytes": 61077,
+      "sha256": "992daf485e2d479ac1df3886019946d0bf512ef6517ec730ce4c7315f9472ecc",
+      "role": "host",
+      "rel": "@earendil-works/pi-ai/dist/api/anthropic-messages.js",
+      "abs": null
+    },
+    {
+      "key": "pi-ai-completions",
+      "bytes": 64433,
+      "sha256": "df81627c173163d0b918692f4a3b87e22cbdb5883b809e4d70d6152d1e68d948",
+      "role": "host",
+      "rel": "@earendil-works/pi-ai/dist/api/openai-completions.js",
+      "abs": null
+    },
+    {
+      "key": "pi-ai-responses-shared",
+      "bytes": 36004,
+      "sha256": "00796997da00cd4cb77ae8c1c4bb92a3d4a4a4dd5bea18524de7173e4f877e4c",
+      "role": "host",
+      "rel": "@earendil-works/pi-ai/dist/api/openai-responses-shared.js",
+      "abs": null
+    }
+  ]
+}

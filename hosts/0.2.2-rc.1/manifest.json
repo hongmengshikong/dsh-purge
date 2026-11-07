@@ -1,7 +1,7 @@
 {
   "schema": "dsh-purge/host-snapshot@1",
   "hostVersion": "0.2.2-rc.1",
-  "capturedAt": "2026-11-07T17:49:51.271Z",
+  "capturedAt": "2026-11-07T17:52:56.723Z",
   "installRoot": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules",
   "packages": {
     "@deepseek-ai/dsh-acp-app": "0.2.2-rc.1",
