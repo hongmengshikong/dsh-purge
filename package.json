@@ -47,7 +47,8 @@
     "host:snapshot": "node scripts/host-snapshot.mjs",
     "host:fetch": "node scripts/host-fetch.mjs",
     "host:index": "node scripts/host-index.mjs",
-    "host:verify": "node scripts/host-verify.mjs"
+    "host:verify": "node scripts/host-verify.mjs",
+    "host:restore": "node scripts/host-restore.mjs"
   },
   "license": "Apache-2.0",
   "keywords": [
@@ -107,6 +108,7 @@
   "dshTarget": "0.2.2-rc.1",
   "dshPin": "one-plugin-version-per-host-version"
 }
+
 
 
 
