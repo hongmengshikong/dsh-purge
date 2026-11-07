@@ -1,11 +1,10 @@
 {
   "schema": "dsh-purge/archived-patches@1",
-  "note": "从补丁表移出、只留档不加载的旧宿主兼容补丁。verify-patches 会从冻结基线里剔除这些 id 再与 loader 比对。",
+  "note": "留档不加载：#40 旧版特有、#47 锚点已变待重写、#88 被 #87 改写取代。#49 经验证在 0.2.2 仍适用，已恢复加载。",
   "source": "patches/legacy/tools-legacy.json",
   "ids": [
     40,
     47,
-    49,
     88
   ],
   "items": [
@@ -17,11 +16,6 @@
     {
       "id": 47,
       "name": "ANTHROPIC_OAUTH_NO_CLAUDE_IDENTITY",
-      "layer": "0.2.0 兼容"
-    },
-    {
-      "id": 49,
-      "name": "ANTHROPIC_OAUTH_CLI_NEUTRAL",
       "layer": "0.2.0 兼容"
     },
     {

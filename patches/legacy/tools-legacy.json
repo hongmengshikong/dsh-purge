@@ -1,6 +1,6 @@
 {
   "schema": "dsh-purge/legacy-patches@1",
-  "note": "从 patches/tools.json 移出的旧宿主兼容补丁（0.1.5 / 0.2.0）。不参与加载与门禁，仅留档；需要时手工搬回。 #88 的锚点是 #87 插入后的文本，在原始宿主上必然 miss；1:1 模型下不再单独保留。",
+  "note": "旧宿主兼容补丁留档：#40（0.1.5 complete-prompt）、#47（pi-ai OAuth 身份句，锚点已变需重写）、#88（#87 产出文本的二次修饰）。#49 已在 0.2.2 上验证仍适用，已恢复。",
   "patches": [
     {
       "id": 40,
@@ -82,37 +82,6 @@
       "markers": [
         "[dsh-purge] OAuth no longer prepends Claude Code identity"
       ]
-    },
-    {
-      "id": 49,
-      "name": "ANTHROPIC_OAUTH_CLI_NEUTRAL",
-      "layer": "0.2.0 兼容",
-      "layer_en": "0.2.0",
-      "desc": "OAuth 不再伪装 claude-cli / stop Claude CLI OAuth mimicry",
-      "file": [
-        "pi-ai-anthropic-messages"
-      ],
-      "optional": true,
-      "skipIfMarked": true,
-      "replacements": [
-        {
-          "pattern": "const toClaudeCodeName = (name) => ccToolLookup.get(name.toLowerCase()) ?? name;",
-          "replace": "const toClaudeCodeName = (name) => name; // [dsh-purge] keep harness tool names"
-        },
-        {
-          "pattern": "\"user-agent\": `claude-cli/${claudeCodeVersion}`,",
-          "replace": "\"user-agent\": `deepseek-harness/dsh-purge`, // [dsh-purge] neutral OAuth UA"
-        },
-        {
-          "pattern": "\"x-app\": \"cli\",",
-          "replace": "\"x-app\": \"dsh\", // [dsh-purge] neutral OAuth app id"
-        }
-      ],
-      "markers": [
-        "[dsh-purge] keep harness tool names",
-        "[dsh-purge] neutral OAuth UA"
-      ],
-      "markersAny": true
     },
     {
       "id": 88,

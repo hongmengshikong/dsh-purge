@@ -1,6 +1,6 @@
 {
   "schema": "dsh-purge/status-baseline@1",
-  "capturedAt": "2026-11-07T18:25:07.678Z",
+  "capturedAt": "2026-11-07T19:00:41.362Z",
   "aiBase": "<aiBase>",
   "host": {
     "dsh-base": "0.2.2-rc.1",
@@ -8,11 +8,11 @@
     "dsh-agent-loop": "0.2.2-rc.1",
     "dsh-system-prompt": "0.2.2-rc.1"
   },
-  "patches": 82,
+  "patches": 83,
   "counts": {
-    "total": 82,
+    "total": 83,
     "applied": 12,
-    "pending": 55,
+    "pending": 56,
     "drifted": 0,
     "unmatched": 0,
     "skipped": 1,
@@ -62,6 +62,7 @@
     "45": "na",
     "46": "na",
     "48": "applied",
+    "49": "pending",
     "50": "applied",
     "51": "pending",
     "52": "pending",

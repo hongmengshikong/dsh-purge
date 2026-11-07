@@ -1837,6 +1837,37 @@
       "markers": [
         "Add a small attribution badge to documents"
       ]
+    },
+    {
+      "id": 49,
+      "name": "ANTHROPIC_OAUTH_CLI_NEUTRAL",
+      "layer": "0.2.0 兼容",
+      "layer_en": "0.2.0",
+      "desc": "OAuth 不再伪装 claude-cli / stop Claude CLI OAuth mimicry",
+      "file": [
+        "pi-ai-anthropic-messages"
+      ],
+      "optional": true,
+      "skipIfMarked": true,
+      "replacements": [
+        {
+          "pattern": "const toClaudeCodeName = (name) => ccToolLookup.get(name.toLowerCase()) ?? name;",
+          "replace": "const toClaudeCodeName = (name) => name; // [dsh-purge] keep harness tool names"
+        },
+        {
+          "pattern": "\"user-agent\": `claude-cli/${claudeCodeVersion}`,",
+          "replace": "\"user-agent\": `deepseek-harness/dsh-purge`, // [dsh-purge] neutral OAuth UA"
+        },
+        {
+          "pattern": "\"x-app\": \"cli\",",
+          "replace": "\"x-app\": \"dsh\", // [dsh-purge] neutral OAuth app id"
+        }
+      ],
+      "markers": [
+        "[dsh-purge] keep harness tool names",
+        "[dsh-purge] neutral OAuth UA"
+      ],
+      "markersAny": true
     }
   ]
 }
