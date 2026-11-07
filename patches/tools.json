@@ -21,6 +21,10 @@
         {
           "pattern": "\teditIntent(target, actor) {\n\t\tconst owner = this.owner(actor);\n\t\tconst prior = owner ? this.get(owner, target.targetKey) : void 0;\n\t\tif (!owner || prior === void 0) throw new FsError(`edit requires reading \"${target.displayPath}\" first`, \"FS_NOT_OBSERVED\");\n\t\tif (prior.kind === \"absent\") throw new FsError(`cannot edit \"${target.displayPath}\": not found`, \"FS_NOT_FOUND\");\n\t\treturn { version: prior.version };\n\t}",
           "replace": "\teditIntent(target, actor) {\n\t\t// [dsh-purge] observation bypass: edits are unconditional (no read-first gate).\n\t\treturn void 0;\n\t}"
+        },
+        {
+          "pattern": "\teditIntent(target, actor) {\n\t\treturn this.requirePresent(target, actor, \"edit\");\n\t}",
+          "replace": "\teditIntent(target, actor) {\n\t\t// [dsh-purge] observation bypass: edits are unconditional.\n\t\treturn void 0;\n\t}"
         }
       ],
       "markers": [

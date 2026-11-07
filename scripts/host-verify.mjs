@@ -54,6 +54,20 @@ for (const p of patches) {
 	rows.push({ id: p.id, name: p.name, optional: p.optional === true, pinned: pinnedHere, status: st });
 }
 
+// 部分命中：一条补丁里有几处 replacement 只命中一部分（多版本备选写法 vs 真的漏改）。
+// 不挡发版，但要看得见——#17 就是「写放行了、编辑没放行」这种半截状态。
+const fixtureFiles = core.targetFiles(fixtureAiBase);
+const fixtureTexts = (p) => [].concat(p.file).flatMap((k) => (Array.isArray(fixtureFiles[k]) ? fixtureFiles[k] : [fixtureFiles[k]])).filter(Boolean).map((fp) => { try { return readFileSync(fp, "utf8"); } catch { return ""; } });
+const partial = [];
+for (const p of core.ALL_PATCHES) {
+	if (!core.patchAppliesHere(p, "web")) continue;
+	const reps = p.replacements && p.replacements.length ? p.replacements : [];
+	if (!reps.length) continue;
+	const texts = fixtureTexts(p);
+	if (!texts.length) continue;
+	const matched = reps.filter((r) => texts.some((t) => (r.pattern instanceof RegExp ? new RegExp(r.pattern.source, r.pattern.flags.replace("g", "")).test(t) : t.includes(r.pattern)))).length;
+	if (matched > 0 && matched < reps.length) partial.push({ id: p.id, name: p.name, matched, total: reps.length });
+}
 const required = rows.filter((r) => !r.optional && r.pinned);
 // 快照是「未打补丁的原始宿主」：pending = pattern 命中、可以打；applied = 已打过。
 // 真正意义上的失败是 drifted（官方原文变了）/ unmatched / missing_file。
@@ -90,10 +104,11 @@ const report = {
 	dshTarget: pkg.dshTarget,
 	fixture: path.relative(ROOT, hostDir),
 	pinnedFiles: manifest.counts.files,
-	patches: { total: rows.length, required: required.length, requiredFail: requiredFail.length, optionalMiss: optionalMiss.length, absentFiles: absentFiles.length },
+	patches: { total: rows.length, required: required.length, requiredFail: requiredFail.length, optionalMiss: optionalMiss.length, absentFiles: absentFiles.length, partial: partial.length },
 	requiredFail: requiredFail.map((r) => ({ id: r.id, name: r.name, status: r.status })),
 	optionalMiss: optionalMiss.map((r) => ({ id: r.id, name: r.name, status: r.status })),
 	absentFiles: absentFiles.map((r) => ({ id: r.id, name: r.name })),
+	partial,
 	live: {
 		aiBase: live.aiBase,
 		version: live.version,
@@ -112,12 +127,17 @@ if (asJson) {
 	console.log(`快照       : ${report.fixture}（${report.pinnedFiles} 文件）`);
 	console.log(`本机宿主   : ${live.version || "?"} ${report.live.versionMatchesPin ? "= 钉子" : "≠ 钉子（已升版）"}`);
 	console.log(`指纹比对   : 命中 ${report.live.filesMatched} / 变更 ${report.live.filesMismatched} / 缺失 ${report.live.filesMissing}`);
-	console.log(`\n补丁判定   : 参与 ${report.patches.total}  必需 ${report.patches.required}  失败 ${report.patches.requiredFail}  可选未命中 ${report.patches.optionalMiss}  本宿主无文件 ${report.patches.absentFiles}`);
+	console.log(`\n补丁判定   : 参与 ${report.patches.total}  必需 ${report.patches.required}  失败 ${report.patches.requiredFail}  可选未命中 ${report.patches.optionalMiss}  本宿主无文件 ${report.patches.absentFiles}  部分命中 ${report.patches.partial}`);
 	if (requiredFail.length) {
 		console.log("\n必需补丁未通过：");
 		for (const r of requiredFail.slice(0, 40)) console.log(`  #${r.id} ${r.name.padEnd(38)} ${r.status}`);
 		if (requiredFail.length > 40) console.log(`  ... 另外 ${requiredFail.length - 40} 条`);
 	}
+	if (partial.length) {
+		console.log(`\n部分命中（多版本备选写法，或真的只改了一半）：`);
+		for (const r of partial.slice(0, 12)) console.log(`  #${r.id} ${r.name.padEnd(38)} ${r.matched}/${r.total}`);
+	}
+
 	if (live.mismatched.length) {
 		console.log(`\n本机与快照不一致（前 10）：`);
 		for (const f of live.mismatched.slice(0, 10)) console.log(`  ${f}`);
@@ -126,6 +146,8 @@ if (asJson) {
 }
 
 process.exit(requiredFail.length === 0 ? 0 : 1);
+
+
 
 
 
