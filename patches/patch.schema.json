@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dsh-purge.local/schema/patch-table.json",
+  "title": "dsh-purge patch table",
+  "description": "patches/*.json 的形状约束。pattern 允许字符串（精确匹配）或 {regex,flags}（正则，载入时还原为 RegExp）。",
+  "type": "object",
+  "required": ["group", "patches"],
+  "additionalProperties": false,
+  "properties": {
+    "group": { "type": "string", "enum": ["prompt", "code", "engine", "tools"] },
+    "note": { "type": "string" },
+    "patches": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/patch" } }
+  },
+  "$defs": {
+    "regex": {
+      "type": "object",
+      "required": ["regex"],
+      "additionalProperties": false,
+      "properties": {
+        "regex": { "type": "string", "minLength": 1 },
+        "flags": { "type": "string", "pattern": "^[gimsuy]*$" }
+      }
+    },
+    "pattern": {
+      "anyOf": [
+        { "type": "string", "minLength": 1 },
+        { "$ref": "#/$defs/regex" }
+      ]
+    },
+    "replacement": {
+      "type": "object",
+      "required": ["pattern", "replace"],
+      "additionalProperties": false,
+      "properties": {
+        "pattern": { "$ref": "#/$defs/pattern" },
+        "replace": { "type": "string" },
+        "expect": { "type": "number" },
+        "insertProbe": { "type": "string", "minLength": 1 }
+      }
+    },
+    "patch": {
+      "type": "object",
+      "required": ["id", "name", "desc", "file"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "number" },
+        "name": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]*$" },
+        "layer": { "type": "string", "minLength": 1 },
+        "layer_en": { "type": "string", "minLength": 1 },
+        "desc": { "type": "string", "minLength": 1 },
+        "file": {
+          "anyOf": [
+            { "type": "string", "minLength": 1 },
+            { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+          ]
+        },
+        "rel": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "patterns": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/pattern" } },
+        "replace": { "type": "string" },
+        "replacements": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/replacement" } },
+        "markers": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "markersAny": { "type": "boolean" },
+        "marker": { "type": "string", "minLength": 1 },
+        "skipIfMarked": { "type": "boolean" },
+        "forbid": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "optional": { "type": "boolean" },
+        "strictFiles": { "type": "boolean" },
+        "softSettle": { "type": "boolean" },
+        "surfaces": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "kind": { "type": "string" },
+        "upgrade": { "type": "string" },
+        "text": { "type": "string" }
+      }
+    }
+  }
+}

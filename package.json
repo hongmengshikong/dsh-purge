@@ -22,6 +22,7 @@
   "files": [
     "lib",
     "!lib/default-prompt-inject.md",
+    "patches",
     "bin",
     "docs",
     "presets",
@@ -38,7 +39,11 @@
   "scripts": {
     "embed-prompt": "node scripts/embed-default-prompt.mjs",
     "build:client": "node scripts/build-client.mjs",
-    "postinstall": "node scripts/ensure-profile-bundle.mjs"
+    "postinstall": "node scripts/ensure-profile-bundle.mjs",
+    "snapshot:status": "node scripts/snapshot-status.mjs",
+    "patches:dump": "node scripts/dump-patches.mjs",
+    "patches:split": "node scripts/split-patches.mjs",
+    "verify:patches": "node scripts/verify-patches.mjs"
   },
   "license": "Apache-2.0",
   "keywords": [

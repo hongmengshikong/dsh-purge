@@ -1,0 +1,44 @@
+{
+  "schema": "dsh-purge/display-groups@1",
+  "groups": {
+    "disclaimer": [
+      1,
+      2,
+      3
+    ],
+    "approval_sentence": [
+      5,
+      11,
+      12
+    ],
+    "approval_policy": [
+      8,
+      9,
+      10
+    ],
+    "desktop_update": [
+      45,
+      46
+    ],
+    "desktop_close": [
+      83,
+      84
+    ],
+    "followup": [
+      85,
+      86
+    ],
+    "hang": [
+      87,
+      88
+    ],
+    "hooks_deny": [
+      30,
+      31
+    ],
+    "hooks_steer": [
+      64,
+      65
+    ]
+  }
+}
