@@ -36,3 +36,6 @@ default-prompt-inject.md
 *.asar
 *.asar.bak
 *.bak
+
+# JetBrains
+.idea/
