@@ -1,7 +1,7 @@
 {
   "schema": "dsh-purge/status-baseline@1",
-  "capturedAt": "2026-11-07T17:52:11.217Z",
-  "aiBase": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai",
+  "capturedAt": "2026-11-07T18:00:38.441Z",
+  "aiBase": "<aiBase>",
   "host": {
     "dsh-base": "0.2.2-rc.1",
     "dsh-web-app": "0.2.2-rc.1",

@@ -36,6 +36,16 @@ const pkgVersion = (fp) => {
 };
 
 const aiBase = core.findAiBase();
+const installRoot = aiBase ? path.dirname(aiBase) : "";
+const mask = (p) => {
+	if (!p) return p;
+	const norm = String(p);
+	if (aiBase && norm.toLowerCase().startsWith(aiBase.toLowerCase())) return "<aiBase>" + norm.slice(aiBase.length);
+	if (installRoot && norm.toLowerCase().startsWith(installRoot.toLowerCase())) return "<installRoot>" + norm.slice(installRoot.length);
+	const home = process.env.USERPROFILE || "";
+	if (home && norm.toLowerCase().startsWith(home.toLowerCase())) return "<home>" + norm.slice(home.length);
+	return norm;
+};
 if (!aiBase || !existsSync(aiBase)) {
 	console.error(`aiBase 不可用：${aiBase || "(null)"}`);
 	process.exit(2);
@@ -56,7 +66,7 @@ for (const [key, val] of Object.entries(files)) {
 	hostFiles[key] = list.map((fp) => {
 		const exists = existsSync(fp);
 		return {
-			path: fp,
+			path: mask(fp),
 			exists,
 			bytes: exists ? statSync(fp).size : 0,
 			sha256: exists ? sha256File(fp) : null,
@@ -67,7 +77,7 @@ for (const [key, val] of Object.entries(files)) {
 const snapshot = {
 	schema: "dsh-purge/status-baseline@1",
 	capturedAt: new Date().toISOString(),
-	aiBase,
+	aiBase: "<aiBase>",
 	host: {
 		"dsh-base": pkgVersion(path.join(aiBase, "dsh-base", "package.json")),
 		"dsh-web-app": pkgVersion(path.join(aiBase, "dsh-web-app", "package.json")),
@@ -83,7 +93,7 @@ mkdirSync(OUT, { recursive: true });
 writeFileSync(path.join(OUT, "status-baseline.json"), `${JSON.stringify(snapshot, null, 2)}\n`, "utf8");
 writeFileSync(
 	path.join(OUT, "host-files.json"),
-	`${JSON.stringify({ schema: "dsh-purge/host-files@1", aiBase, files: hostFiles }, null, 2)}\n`,
+	`${JSON.stringify({ schema: "dsh-purge/host-files@1", aiBase: "<aiBase>", files: hostFiles }, null, 2)}\n`,
 	"utf8",
 );
 
@@ -92,3 +102,7 @@ console.log(`versions : ${JSON.stringify(snapshot.host)}`);
 console.log(`patches  : ${snapshot.patches}`);
 console.log(`counts   : ${JSON.stringify(counts)}`);
 console.log(`written  : ${path.relative(ROOT, path.join(OUT, "status-baseline.json"))}, ${path.relative(ROOT, path.join(OUT, "host-files.json"))}`);
+
+
+
+

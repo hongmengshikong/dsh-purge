@@ -1,10 +1,10 @@
 {
   "schema": "dsh-purge/host-files@1",
-  "aiBase": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai",
+  "aiBase": "<aiBase>",
   "files": {
     "agent-instructions": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-agent-instructions\\lib\\index.js",
+        "path": "<aiBase>\\dsh-agent-instructions\\lib\\index.js",
         "exists": true,
         "bytes": 63970,
         "sha256": "f60fc5f2a6dc1ab2b74f35b03a51ed30bda7e3718304645e1e8d1321e319b78b"
@@ -12,7 +12,7 @@
     ],
     "web-app": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-web-app\\cordis.patch.yml",
+        "path": "<aiBase>\\dsh-web-app\\cordis.patch.yml",
         "exists": true,
         "bytes": 22818,
         "sha256": "37d4e932246bf97b55650a8c1cfb18ba248a0677ded5ef61394a3ff443efeb41"
@@ -20,7 +20,7 @@
     ],
     "web-app-lib": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-web-app\\lib\\index.js",
+        "path": "<aiBase>\\dsh-web-app\\lib\\index.js",
         "exists": true,
         "bytes": 7844,
         "sha256": "6662ca712368c56fb8818efa53039ef92ce215a328a76b9cdd5e1bed624a0e84"
@@ -28,7 +28,7 @@
     ],
     "harness-dev-context": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-harness-dev-context\\lib\\index.js",
+        "path": "<aiBase>\\dsh-harness-dev-context\\lib\\index.js",
         "exists": true,
         "bytes": 6903,
         "sha256": "549f8b30da563cd1b00c2e9d86701fdb516de098371f41b398297c66da9e764f"
@@ -36,7 +36,7 @@
     ],
     "skill-badge": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-skill-badge\\lib\\index.js",
+        "path": "<aiBase>\\dsh-skill-badge\\lib\\index.js",
         "exists": true,
         "bytes": 1669,
         "sha256": "80273c95c0f37b4c30dbbe6de5350163460bcdaf1e33c3d18dc23ea3ed6aa255"
@@ -44,7 +44,7 @@
     ],
     "headless": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-headless\\cordis.patch.yml",
+        "path": "<aiBase>\\dsh-headless\\cordis.patch.yml",
         "exists": true,
         "bytes": 1510,
         "sha256": "bddeb19110c622ce8e28182b244f7c0614ed0171fa7cc690a9825650ff6f0ae8"
@@ -52,7 +52,7 @@
     ],
     "agent-preset": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-web-app\\presets\\standard.patch.yml",
+        "path": "<aiBase>\\dsh-web-app\\presets\\standard.patch.yml",
         "exists": true,
         "bytes": 6858,
         "sha256": "3006cc3780cddaa7fb0089e5854e6bbef4409cf1d425930fd835226b95660afd"
@@ -60,7 +60,7 @@
     ],
     "user-approval": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-user-approval\\lib\\types\\index.js",
+        "path": "<aiBase>\\dsh-user-approval\\lib\\types\\index.js",
         "exists": true,
         "bytes": 11084,
         "sha256": "ceb6c078357018aad461928a133e559e0cf36bc331b495969690e10037cb8747"
@@ -68,7 +68,7 @@
     ],
     "user-approval-code": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-user-approval\\lib\\index.js",
+        "path": "<aiBase>\\dsh-user-approval\\lib\\index.js",
         "exists": true,
         "bytes": 8979,
         "sha256": "45b7c170b6897f15a338037b1951997a1b99018c30b5fc95f7e08ad798075be2"
@@ -76,7 +76,7 @@
     ],
     "escalation": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-sandbox\\lib\\index.js",
+        "path": "<aiBase>\\dsh-sandbox\\lib\\index.js",
         "exists": true,
         "bytes": 19652,
         "sha256": "9ece3e7b04d5526441e2439431d769acf67abc46fa49de000dd9c792893eb5e7"
@@ -84,7 +84,7 @@
     ],
     "fs-sandbox": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-fs-sandbox\\lib\\index.js",
+        "path": "<aiBase>\\dsh-fs-sandbox\\lib\\index.js",
         "exists": true,
         "bytes": 9220,
         "sha256": "f4edd14bf48f8d5bfdea10a61c6651ccde99f2d08a79855746ad2a8d89c6fb73"
@@ -92,7 +92,7 @@
     ],
     "sandbox-local": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-sandbox-local\\lib\\index.js",
+        "path": "<aiBase>\\dsh-sandbox-local\\lib\\index.js",
         "exists": true,
         "bytes": 23136,
         "sha256": "4399dae3ca786b032d232bda094f3f395c151f0258b1373e640eb4ba0d04ba3f"
@@ -100,7 +100,7 @@
     ],
     "base": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-base\\cordis.patch.yml",
+        "path": "<aiBase>\\dsh-base\\cordis.patch.yml",
         "exists": true,
         "bytes": 20962,
         "sha256": "b65a86e55f02d863286bb6faac8ae292c18fffca3c8aa4491b600fa4dd6b48d0"
@@ -108,7 +108,7 @@
     ],
     "settings": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-settings\\lib\\index.js",
+        "path": "<aiBase>\\dsh-settings\\lib\\index.js",
         "exists": true,
         "bytes": 22665,
         "sha256": "041a2682ed77a7025ceb9bf659b80db8b788c338cd1aa644f0bcc6bc122a4091"
@@ -116,7 +116,7 @@
     ],
     "fs-observation-policy": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-fs-observation-policy\\lib\\index.js",
+        "path": "<aiBase>\\dsh-fs-observation-policy\\lib\\index.js",
         "exists": true,
         "bytes": 4359,
         "sha256": "f4268f8f10f1137eb84ff4c01ef87bb924f4bffa0457e6f69d6e271ae9083b11"
@@ -124,7 +124,7 @@
     ],
     "repeat-tool-reminder": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-repeat-tool-reminder\\lib\\index.js",
+        "path": "<aiBase>\\dsh-repeat-tool-reminder\\lib\\index.js",
         "exists": true,
         "bytes": 93441,
         "sha256": "6d582ef007597eacd69f81a044424107f564ec3a5ad0b04ebe031d80f14488a8"
@@ -132,7 +132,7 @@
     ],
     "compaction-tool-result-pruner": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-compaction-tool-result-pruner\\lib\\index.js",
+        "path": "<aiBase>\\dsh-compaction-tool-result-pruner\\lib\\index.js",
         "exists": true,
         "bytes": 7570,
         "sha256": "e86442e9a2403c392482b9035916e5610c251d62f3581892866404d69c064254"
@@ -140,7 +140,7 @@
     ],
     "tool-fs": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-tool-fs\\lib\\index.js",
+        "path": "<aiBase>\\dsh-tool-fs\\lib\\index.js",
         "exists": true,
         "bytes": 76992,
         "sha256": "6c83d4ed7c66604bd0a52bda3f7d08de12518c7e3595c3cc08d937bbb981724e"
@@ -148,7 +148,7 @@
     ],
     "tool-subagent": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-tool-subagent\\lib\\index.js",
+        "path": "<aiBase>\\dsh-tool-subagent\\lib\\index.js",
         "exists": true,
         "bytes": 28096,
         "sha256": "e73d2fb1753421bfd80e8adf38a3cafe93a4fa2516e07f9764279a880821734e"
@@ -156,7 +156,7 @@
     ],
     "subagent": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-subagent\\lib\\index.js",
+        "path": "<aiBase>\\dsh-subagent\\lib\\index.js",
         "exists": true,
         "bytes": 142576,
         "sha256": "5aad8aadee1879f1e8a878431630f885adbe6f9ee9cb1832838abbc56bc1fbea"
@@ -164,7 +164,7 @@
     ],
     "subagent-types": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-subagent\\lib\\types\\child-agent.js",
+        "path": "<aiBase>\\dsh-subagent\\lib\\types\\child-agent.js",
         "exists": true,
         "bytes": 10463,
         "sha256": "ee4ff465cf9094b10c812f319db5ca33db7431aeb6429bb42ac2d8476470cce5"
@@ -172,7 +172,7 @@
     ],
     "base-package": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-base\\package.json",
+        "path": "<aiBase>\\dsh-base\\package.json",
         "exists": true,
         "bytes": 6242,
         "sha256": "e4c91192e947bfe6879092845d65f5bccb9fd77d3251b292f446205f442a95d8"
@@ -180,7 +180,7 @@
     ],
     "preset-standard": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-web-app\\presets\\standard.patch.yml",
+        "path": "<aiBase>\\dsh-web-app\\presets\\standard.patch.yml",
         "exists": true,
         "bytes": 6858,
         "sha256": "3006cc3780cddaa7fb0089e5854e6bbef4409cf1d425930fd835226b95660afd"
@@ -188,7 +188,7 @@
     ],
     "preset-cordis": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-web-app\\presets\\cordis.patch.yml",
+        "path": "<aiBase>\\dsh-web-app\\presets\\cordis.patch.yml",
         "exists": true,
         "bytes": 7434,
         "sha256": "0e8f611644b3c36249808c4d7eb7a40d78006d04da6b55eef1a42797a5a34355"
@@ -196,7 +196,7 @@
     ],
     "preset-minimal": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-web-app\\presets\\minimal.patch.yml",
+        "path": "<aiBase>\\dsh-web-app\\presets\\minimal.patch.yml",
         "exists": true,
         "bytes": 3724,
         "sha256": "a2a9ba1c9c392a45466708f18bc0aefbf300577f9b544dc06049f73a8a5b3267"
@@ -204,7 +204,7 @@
     ],
     "preset-ptc": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-web-app\\presets\\ptc.patch.yml",
+        "path": "<aiBase>\\dsh-web-app\\presets\\ptc.patch.yml",
         "exists": true,
         "bytes": 6963,
         "sha256": "ce02148b1fd575cc93071744180468cd305bdcd50dbfdd3b9b0605c5281d283d"
@@ -212,7 +212,7 @@
     ],
     "preset-acp-app": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-acp-app\\cordis.patch.yml",
+        "path": "<aiBase>\\dsh-acp-app\\cordis.patch.yml",
         "exists": true,
         "bytes": 438,
         "sha256": "725b8533f1699724c664d7cfe49ecc2742ffcf5aaf27d01b5748a7f91a19d9bc"
@@ -220,7 +220,7 @@
     ],
     "preset-sdk-app": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-sdk-app\\cordis.patch.yml",
+        "path": "<aiBase>\\dsh-sdk-app\\cordis.patch.yml",
         "exists": true,
         "bytes": 2818,
         "sha256": "45673e5cd8aaaeeff8b61a1dfe3144a447850ba2047c14e93844ffcb49d840a2"
@@ -228,7 +228,7 @@
     ],
     "preset-sdk-minimal": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-sdk-minimal\\cordis.patch.yml",
+        "path": "<aiBase>\\dsh-sdk-minimal\\cordis.patch.yml",
         "exists": true,
         "bytes": 5815,
         "sha256": "e4d4af718a8876ab280df474b5902aaf2fb47a899301962a6ff919f7f2beabd5"
@@ -236,7 +236,7 @@
     ],
     "tool-bash": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-tool-bash\\lib\\index.js",
+        "path": "<aiBase>\\dsh-tool-bash\\lib\\index.js",
         "exists": true,
         "bytes": 27841,
         "sha256": "4f512a60fcb6c17185fafbcb46d9e19452b0d5f5eada7acde4ce2800e5d11179"
@@ -244,7 +244,7 @@
     ],
     "tool-pwsh": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-tool-pwsh\\lib\\index.js",
+        "path": "<aiBase>\\dsh-tool-pwsh\\lib\\index.js",
         "exists": true,
         "bytes": 30631,
         "sha256": "485f38009c804a4e04c1becd6b1198ece30d51235c14531c9cf6fb502f2a1813"
@@ -252,7 +252,7 @@
     ],
     "persona": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-persona\\lib\\index.js",
+        "path": "<aiBase>\\dsh-persona\\lib\\index.js",
         "exists": true,
         "bytes": 2163,
         "sha256": "1e9dd7f0dfd87cbff6486b7ca043d2e1b863a2a56b99106a4bf74831591266d5"
@@ -260,7 +260,7 @@
     ],
     "session-format-v0": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-session-format-v0-to-v1\\lib\\index.js",
+        "path": "<aiBase>\\dsh-session-format-v0-to-v1\\lib\\index.js",
         "exists": true,
         "bytes": 105495,
         "sha256": "130bd453ae418537f423ecc9419d1184ac9d66d501101eedbc7f721b0bdabd91"
@@ -268,7 +268,7 @@
     ],
     "system-prompt": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-system-prompt\\lib\\index.js",
+        "path": "<aiBase>\\dsh-system-prompt\\lib\\index.js",
         "exists": true,
         "bytes": 19994,
         "sha256": "18b692b03bbb717589085f63b126cbcf22963763c5a0565bb3a7a5d254e8e4a7"
@@ -276,7 +276,7 @@
     ],
     "tool-web": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-tool-web\\lib\\index.js",
+        "path": "<aiBase>\\dsh-tool-web\\lib\\index.js",
         "exists": true,
         "bytes": 36568,
         "sha256": "129af8e6bf485d47d3f5f562877b5c266fd57f1a5cc14bfebacc2780b2837d46"
@@ -284,7 +284,7 @@
     ],
     "api-session-controller": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-api-session-controller\\lib\\index.js",
+        "path": "<aiBase>\\dsh-api-session-controller\\lib\\index.js",
         "exists": true,
         "bytes": 159265,
         "sha256": "4cf6c66e65cce865d270fa89405b96d048ffa62e493e4ffbd1a826be2207a4cd"
@@ -292,7 +292,7 @@
     ],
     "pi-ai-completions": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@earendil-works\\pi-ai\\dist\\api\\openai-completions.js",
+        "path": "<installRoot>\\@earendil-works\\pi-ai\\dist\\api\\openai-completions.js",
         "exists": true,
         "bytes": 64433,
         "sha256": "df81627c173163d0b918692f4a3b87e22cbdb5883b809e4d70d6152d1e68d948"
@@ -300,7 +300,7 @@
     ],
     "pi-ai-responses-shared": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@earendil-works\\pi-ai\\dist\\api\\openai-responses-shared.js",
+        "path": "<installRoot>\\@earendil-works\\pi-ai\\dist\\api\\openai-responses-shared.js",
         "exists": true,
         "bytes": 36004,
         "sha256": "00796997da00cd4cb77ae8c1c4bb92a3d4a4a4dd5bea18524de7173e4f877e4c"
@@ -308,7 +308,7 @@
     ],
     "pi-ai-anthropic-messages": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@earendil-works\\pi-ai\\dist\\api\\anthropic-messages.js",
+        "path": "<installRoot>\\@earendil-works\\pi-ai\\dist\\api\\anthropic-messages.js",
         "exists": true,
         "bytes": 61077,
         "sha256": "992daf485e2d479ac1df3886019946d0bf512ef6517ec730ce4c7315f9472ecc"
@@ -316,19 +316,19 @@
     ],
     "session-reference": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-session-reference\\lib\\index.js",
+        "path": "<aiBase>\\dsh-session-reference\\lib\\index.js",
         "exists": true,
         "bytes": 32304,
         "sha256": "ae22f33d8e4007bdd5dcda72edd8a1c6cee9b1853531a7024ec5e2be1ab5213d"
       },
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-session-reference\\lib\\types\\index.js",
+        "path": "<aiBase>\\dsh-session-reference\\lib\\types\\index.js",
         "exists": true,
         "bytes": 23715,
         "sha256": "7002555a826b4f5ef7f5b325337ced402f471e82116c6d8296f5c5628f902e3a"
       },
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-session-reference\\lib\\types\\spill.js",
+        "path": "<aiBase>\\dsh-session-reference\\lib\\types\\spill.js",
         "exists": true,
         "bytes": 3078,
         "sha256": "0d365cdb82d0fa580c3eab5566e969c9b2898678d9db70a87216642cb3e8f2bb"
@@ -336,7 +336,7 @@
     ],
     "permission-presets": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-permission-presets\\lib\\index.js",
+        "path": "<aiBase>\\dsh-permission-presets\\lib\\index.js",
         "exists": true,
         "bytes": 16851,
         "sha256": "08f06dac668d2639e963753c127230ec8818b47be72e5aed7f5bf637c9f6c16e"
@@ -344,7 +344,7 @@
     ],
     "permission-presets-types": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-permission-presets\\lib\\types\\index.js",
+        "path": "<aiBase>\\dsh-permission-presets\\lib\\types\\index.js",
         "exists": true,
         "bytes": 20781,
         "sha256": "005b44a742f6270846b017b5c7b0ff25a2ca4e306b15b3c2c181c7c0ea3c8268"
@@ -352,7 +352,7 @@
     ],
     "session-log-deepseek": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-session-log-deepseek\\lib\\index.js",
+        "path": "<aiBase>\\dsh-session-log-deepseek\\lib\\index.js",
         "exists": true,
         "bytes": 9148,
         "sha256": "a4b5cc74b9bd9705e107ab4c8eb2395a5c580507e2b5fbd8eff09377f41ca0cf"
@@ -360,7 +360,7 @@
     ],
     "session-log-deepseek-types": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-session-log-deepseek\\lib\\types\\index.js",
+        "path": "<aiBase>\\dsh-session-log-deepseek\\lib\\types\\index.js",
         "exists": true,
         "bytes": 11852,
         "sha256": "4a046a87e4683e927ea05fe1cf3e2ed443af649a5372962df433e1e4aaee33eb"
@@ -368,7 +368,7 @@
     ],
     "deliverables-prompt": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-client-ui-deliverables\\lib\\index.js",
+        "path": "<aiBase>\\dsh-client-ui-deliverables\\lib\\index.js",
         "exists": true,
         "bytes": 10931,
         "sha256": "0ad0b4f4e1cf715c28aeb513a41bc08b09c3c84c36b7f81a60a41ddec7ade3a1"
@@ -376,7 +376,7 @@
     ],
     "llm-deepseek": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-llm-deepseek\\lib\\index.js",
+        "path": "<aiBase>\\dsh-llm-deepseek\\lib\\index.js",
         "exists": true,
         "bytes": 127859,
         "sha256": "955dc7bc7ca6c857ff4a7e373b87c143b96a4c43fc80325b67dc0982600dcc75"
@@ -384,7 +384,7 @@
     ],
     "session": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-session\\lib\\index.js",
+        "path": "<aiBase>\\dsh-session\\lib\\index.js",
         "exists": true,
         "bytes": 96127,
         "sha256": "6fad466aa1f7aa64bfa038681ead5721f66c88e9891e25d357d2b8edbccd5494"
@@ -392,7 +392,7 @@
     ],
     "agent-loop": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-agent-loop\\lib\\index.js",
+        "path": "<aiBase>\\dsh-agent-loop\\lib\\index.js",
         "exists": true,
         "bytes": 66629,
         "sha256": "a6fa8e0c7c90191caf5f4a3bb5c624a86e9845cf3c79d020b71420d0e20ae4c1"
@@ -400,7 +400,7 @@
     ],
     "app-boot": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-app-boot\\lib\\index.js",
+        "path": "<aiBase>\\dsh-app-boot\\lib\\index.js",
         "exists": true,
         "bytes": 225678,
         "sha256": "346f832224737cd9ab1b5e37d111ae232fdd78b5ab892fa3179c112baf6f0a22"
@@ -408,7 +408,7 @@
     ],
     "conversation-client": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-client-ui-conversation\\lib\\client.js",
+        "path": "<aiBase>\\dsh-client-ui-conversation\\lib\\client.js",
         "exists": true,
         "bytes": 940207,
         "sha256": "9a37949cc76603ea3a965ce4d0d6ca65885de4a9808345c38748e595ac396378"
@@ -416,7 +416,7 @@
     ],
     "tool-todo": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-tool-todo\\lib\\index.js",
+        "path": "<aiBase>\\dsh-tool-todo\\lib\\index.js",
         "exists": true,
         "bytes": 6670,
         "sha256": "7391f77f8933e5bfee65b92b121b0979d7a16fe7d55a00033698392cd3703d11"
@@ -424,7 +424,7 @@
     ],
     "auto-review": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-experimental-auto-review\\lib\\index.js",
+        "path": "<aiBase>\\dsh-experimental-auto-review\\lib\\index.js",
         "exists": true,
         "bytes": 29033,
         "sha256": "c516e8803facb9c8484f10c81037859826f1b1d0fef098d933ea23b38fd780b3"
@@ -432,7 +432,7 @@
     ],
     "dsh-tools": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-tools\\lib\\index.js",
+        "path": "<aiBase>\\dsh-tools\\lib\\index.js",
         "exists": true,
         "bytes": 27415,
         "sha256": "1889cbf718d64518dd83245d4dba1e1f080b2c5326259c3ed5b1be7a7666a2bd"
@@ -440,7 +440,7 @@
     ],
     "dsh-tools-types": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-tools\\lib\\types\\index.js",
+        "path": "<aiBase>\\dsh-tools\\lib\\types\\index.js",
         "exists": true,
         "bytes": 16627,
         "sha256": "595154ed8db690d5bea18dc32e03cbca07fbdf20b55f75fbd33e66480dd20511"
@@ -448,7 +448,7 @@
     ],
     "sandbox-policy": [
       {
-        "path": "C:\\Users\\Administrator\\AppData\\Local\\npm-cache\\_npx\\1e7f6d9597241db0\\node_modules\\@deepseek-ai\\dsh-sandbox-policy\\lib\\index.js",
+        "path": "<aiBase>\\dsh-sandbox-policy\\lib\\index.js",
         "exists": true,
         "bytes": 9063,
         "sha256": "8eb1674f9c3c2e336efae7ecc734d5197dc8b80bc29f1f1d61bfe0b5a1472188"

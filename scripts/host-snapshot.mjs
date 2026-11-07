@@ -93,7 +93,7 @@ const manifest = {
 	schema: "dsh-purge/host-snapshot@1",
 	hostVersion: dshVersion,
 	capturedAt: new Date().toISOString(),
-	installRoot,
+	installRoot: "<installRoot>",
 	packages: Object.fromEntries(Object.entries(packages).sort(([a], [b]) => a.localeCompare(b))),
 	counts: {
 		files: files.length,
@@ -124,5 +124,6 @@ console.log(
 		2,
 	),
 );
+
 
 
