@@ -1,0 +1,11 @@
+{
+  "schema": "dsh-purge/archived-patches@1",
+  "note": "从补丁表移出、只留档不加载的旧宿主兼容补丁。verify-patches 会从冻结基线里剔除这些 id 再与 loader 比对。",
+  "source": "patches/legacy/tools-legacy.json",
+  "ids": [40, 47, 49],
+  "items": [
+    { "id": 40, "name": "COMPLETE_PROMPT_KEEP_INJECT", "layer": "0.1.5 兼容" },
+    { "id": 47, "name": "ANTHROPIC_OAUTH_NO_CLAUDE_IDENTITY", "layer": "0.2.0 兼容" },
+    { "id": 49, "name": "ANTHROPIC_OAUTH_CLI_NEUTRAL", "layer": "0.2.0 兼容" }
+  ]
+}

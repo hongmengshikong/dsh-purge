@@ -39,3 +39,6 @@ default-prompt-inject.md
 
 # JetBrains
 .idea/
+
+# 生成的当前快照（不冻结）
+fixtures/patches.current.json

@@ -8,11 +8,12 @@
 | `prompt.json` | `PATCHES` | 10 | 系统提示 / 身份 / 审批话术 |
 | `code.json` | `CODE_PATCHES` | 3 | 宿主分包实现细节 |
 | `engine.json` | `ENGINE_PATCHES` | 8 | 审批、沙箱、权限默认值 |
-| `tools.json` | `NEW_TOOL_PATCHES` | 65 | bash/pwsh/fs/web 等工具描述与行为 |
+| `tools.json` | `NEW_TOOL_PATCHES` | 62 | bash/pwsh/fs/web 等工具描述与行为 |
 
 - `display-groups.json`：状态页把升级链合并为一行展示的分组（原 `PATCH_DISPLAY_GROUPS`）。
 - `patch.schema.json`：结构约束，`lib/patch-loader.js` 载入时校验（零依赖子集校验器 `lib/patch-schema.js`）。
-- `NOTES.md`：从 `core.js` 迁移出来的原 `//` 注释（含各 rc 版本的漂移情报）。JSON 不能写注释，改动补丁时**同步更新这里**。
+- `patches/legacy/`：旧宿主兼容补丁（#40 0.1.5、#47/#49 0.2.0）只留档、不参与加载与门禁。
+- NOTES.md：从 `core.js` 迁移出来的原 `//` 注释（含各 rc 版本的漂移情报）。JSON 不能写注释，改动补丁时**同步更新这里**。
 
 ## 字段速查
 
@@ -60,3 +61,4 @@ npm run embed-prompt
 2. `name` 用大写字母/数字/下划线；`desc` 一句话说明"改了什么"。
 3. 在 `NOTES.md` 里补一条该版本宿主原文的差异说明（下一次漂移时最有用的就是它）。
 4. `npm run verify:patches`：会打印 schema 错误的具体路径，例如 `$.patches[3].replacements[0].pattern: type 期望 string|object，实际 number`。
+
