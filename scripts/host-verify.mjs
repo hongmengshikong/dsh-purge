@@ -5,7 +5,7 @@
  * 判定口径（对应 1 宿主 : 1 插件）：
  *   必需补丁（optional !== true）→ 必须 applied，否则 gate 失败、不发版
  *   可选补丁（optional === true）→ 未命中只记录，不挡发版
- *   仅 external 文件的补丁（如 @earendil-works/pi-ai）→ 快照不含其文件，单独列出
+ *   文件在本宿主上不存在的补丁（如未安装的 hooks/liangshen 插件）→ 单独列出，不计入 gate
  *
  * 另外做一次「宿主已升版」检测：把本机安装的指纹与 manifest 比对。
  *
@@ -57,7 +57,7 @@ for (const p of patches) {
 const required = rows.filter((r) => !r.optional && r.pinned);
 const requiredFail = required.filter((r) => r.status !== "applied");
 const optionalMiss = rows.filter((r) => r.optional && r.status !== "applied" && r.status !== "na");
-const externalOnly = rows.filter((r) => !r.pinned);
+const absentFiles = rows.filter((r) => !r.pinned);
 
 // 宿主升版检测：本机安装 vs manifest
 const liveAiBase = core.findAiBase();
@@ -87,10 +87,10 @@ const report = {
 	dshTarget: pkg.dshTarget,
 	fixture: path.relative(ROOT, hostDir),
 	pinnedFiles: manifest.counts.files,
-	patches: { total: rows.length, required: required.length, requiredFail: requiredFail.length, optionalMiss: optionalMiss.length, externalOnly: externalOnly.length },
+	patches: { total: rows.length, required: required.length, requiredFail: requiredFail.length, optionalMiss: optionalMiss.length, absentFiles: absentFiles.length },
 	requiredFail: requiredFail.map((r) => ({ id: r.id, name: r.name, status: r.status })),
 	optionalMiss: optionalMiss.map((r) => ({ id: r.id, name: r.name, status: r.status })),
-	externalOnly: externalOnly.map((r) => ({ id: r.id, name: r.name })),
+	absentFiles: absentFiles.map((r) => ({ id: r.id, name: r.name })),
 	live: {
 		aiBase: live.aiBase,
 		version: live.version,
@@ -109,7 +109,7 @@ if (asJson) {
 	console.log(`快照       : ${report.fixture}（${report.pinnedFiles} 文件）`);
 	console.log(`本机宿主   : ${live.version || "?"} ${report.live.versionMatchesPin ? "= 钉子" : "≠ 钉子（已升版）"}`);
 	console.log(`指纹比对   : 命中 ${report.live.filesMatched} / 变更 ${report.live.filesMismatched} / 缺失 ${report.live.filesMissing}`);
-	console.log(`\n补丁判定   : 参与 ${report.patches.total}  必需 ${report.patches.required}  失败 ${report.patches.requiredFail}  可选未命中 ${report.patches.optionalMiss}  external-only ${report.patches.externalOnly}`);
+	console.log(`\n补丁判定   : 参与 ${report.patches.total}  必需 ${report.patches.required}  失败 ${report.patches.requiredFail}  可选未命中 ${report.patches.optionalMiss}  本宿主无文件 ${report.patches.absentFiles}`);
 	if (requiredFail.length) {
 		console.log("\n必需补丁未通过：");
 		for (const r of requiredFail.slice(0, 40)) console.log(`  #${r.id} ${r.name.padEnd(38)} ${r.status}`);
@@ -123,4 +123,5 @@ if (asJson) {
 }
 
 process.exit(requiredFail.length === 0 ? 0 : 1);
+
 

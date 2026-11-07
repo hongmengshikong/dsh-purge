@@ -45,7 +45,7 @@ hosts/
 | --- | --- |
 | 必需补丁（`optional !== true`） | 必须 `applied`，否则 `GATE: FAIL`、不发版 |
 | 可选补丁（`optional === true`） | 未命中只记录 |
-| external-only（快照不含其文件，如某些 pi-ai 路径） | 跳过 gate，单独列出 |
+| 文件在本宿主不存在（如未安装的 hooks/liangshen 插件） | 不计入 gate，单独列出 |
 | 宿主指纹 | 本机 57 个文件的 sha256 与 manifest 比对；不一致 = 宿主已升版 |
 
 同时会比对**本机安装**与**钉子**：`本机宿主 : 0.2.2-rc.1 = 钉子` 才说明用户在支持的版本上；
@@ -70,4 +70,5 @@ npm run host:verify
 - `hosts/` 不进 npm 包（`package.json` 的 `files` 未包含），只是仓库内的发布门禁与回归基线。
 - 快照里的文件是上游产物，仅用于本地判定；署名与许可见仓库根 `NOTICE` / `LICENSE-COMMERCIAL.md`。
 - 快照会随宿主升级持续增长（每版约 2.7 MB）。只想保留最近两版时，删旧目录并同步 `index.json`。
+
 
