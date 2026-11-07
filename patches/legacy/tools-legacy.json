@@ -1,6 +1,6 @@
 {
   "schema": "dsh-purge/legacy-patches@1",
-  "note": "从 patches/tools.json 移出的旧宿主兼容补丁（0.1.5 / 0.2.0）。不参与加载与门禁，仅留档；需要时手工搬回。",
+  "note": "从 patches/tools.json 移出的旧宿主兼容补丁（0.1.5 / 0.2.0）。不参与加载与门禁，仅留档；需要时手工搬回。 #88 的锚点是 #87 插入后的文本，在原始宿主上必然 miss；1:1 模型下不再单独保留。",
   "patches": [
     {
       "id": 40,
@@ -113,6 +113,39 @@
         "[dsh-purge] neutral OAuth UA"
       ],
       "markersAny": true
+    },
+    {
+      "id": 88,
+      "name": "HUNG_PROMPT_STRICT_NEEDLE",
+      "layer": "代码",
+      "layer_en": "Code",
+      "desc": "ChatML 头和正文尾都在才算挂住，只剩头或只剩尾都重新置顶",
+      "file": [
+        "agent-loop"
+      ],
+      "optional": true,
+      "skipIfMarked": true,
+      "replacements": [
+        {
+          "pattern": "\t\tif (dshPurgeHung && !(dshPurgeTail && dshPurgeNorm.includes(dshPurgeTail)) && !(dshPurgeHead && dshPurgeNorm.includes(dshPurgeHead))) {\n\t\t\trenderedPrompt = dshPurgeHung + (renderedPrompt ? \"\\n\\n\" + renderedPrompt : \"\"); // [dsh-purge-87] hang needle uses LF\n\t\t}",
+          "replace": "\t\tif (dshPurgeHung && !(dshPurgeTail && dshPurgeNorm.includes(dshPurgeTail) && dshPurgeHead && dshPurgeNorm.includes(dshPurgeHead))) { // [dsh-purge-88]\n\t\t\trenderedPrompt = dshPurgeHung + (renderedPrompt ? \"\\n\\n\" + renderedPrompt : \"\"); // [dsh-purge-87] hang needle uses LF\n\t\t}"
+        },
+        {
+          "pattern": "\t\tif (dshPurgeHung && !(dshPurgeTail && dshPurgeNorm.includes(dshPurgeTail)) && !(dshPurgeHead && dshPurgeNorm.includes(dshPurgeHead))) {\n\t\t\tsystem = dshPurgeHung + (system ? \"\\n\\n\" + system : \"\"); // [dsh-purge-87] hang needle uses LF\n\t\t}",
+          "replace": "\t\tif (dshPurgeHung && !(dshPurgeTail && dshPurgeNorm.includes(dshPurgeTail) && dshPurgeHead && dshPurgeNorm.includes(dshPurgeHead))) { // [dsh-purge-88]\n\t\t\tsystem = dshPurgeHung + (system ? \"\\n\\n\" + system : \"\"); // [dsh-purge-87] hang needle uses LF\n\t\t}"
+        },
+        {
+          "pattern": "\t\tif (dshPurgeHung && !(dshPurgeTail && dshPurgeNorm.includes(dshPurgeTail) && dshPurgeHead && dshPurgeNorm.includes(dshPurgeHead))) {\n\t\t\trenderedPrompt = dshPurgeHung + (renderedPrompt ? \"\\n\\n\" + renderedPrompt : \"\"); // [dsh-purge-87] hang needle uses LF\n\t\t}",
+          "replace": "\t\tif (dshPurgeHung && !(dshPurgeTail && dshPurgeNorm.includes(dshPurgeTail) && dshPurgeHead && dshPurgeNorm.includes(dshPurgeHead))) { // [dsh-purge-88]\n\t\t\trenderedPrompt = dshPurgeHung + (renderedPrompt ? \"\\n\\n\" + renderedPrompt : \"\"); // [dsh-purge-87] hang needle uses LF\n\t\t}"
+        },
+        {
+          "pattern": "\t\tif (dshPurgeHung && !(dshPurgeTail && dshPurgeNorm.includes(dshPurgeTail) && dshPurgeHead && dshPurgeNorm.includes(dshPurgeHead))) {\n\t\t\tsystem = dshPurgeHung + (system ? \"\\n\\n\" + system : \"\"); // [dsh-purge-87] hang needle uses LF\n\t\t}",
+          "replace": "\t\tif (dshPurgeHung && !(dshPurgeTail && dshPurgeNorm.includes(dshPurgeTail) && dshPurgeHead && dshPurgeNorm.includes(dshPurgeHead))) { // [dsh-purge-88]\n\t\t\tsystem = dshPurgeHung + (system ? \"\\n\\n\" + system : \"\"); // [dsh-purge-87] hang needle uses LF\n\t\t}"
+        }
+      ],
+      "markers": [
+        "[dsh-purge-88]"
+      ]
     }
   ]
 }

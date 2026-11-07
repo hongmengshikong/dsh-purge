@@ -988,7 +988,7 @@
       "layer_en": "Prompt",
       "desc": "交付物提示词去掉 Do not call present / drop deliverable prohibition",
       "file": [
-        "deliverables-prompt"
+        "deliverable-file-references"
       ],
       "optional": true,
       "replacements": [
@@ -1036,8 +1036,8 @@
       "skipIfMarked": true,
       "replacements": [
         {
-          "pattern": "\t\tconst claimed = this.inbox.claim(target, position.turn);\n\t\tconst assembly = await this.loopCtx.systemPrompt.assemble(assembleContextFor(this, signal));",
-          "replace": "\t\tconst claimed = this.inbox.claim(target, position.turn);\n\t\tconst dshPurgePrepare = globalThis.__dshPurgePrepareAssemble;\n\t\tif (typeof dshPurgePrepare === \"function\") {\n\t\t\ttry { dshPurgePrepare(this.loopCtx); } catch { /* [dsh-purge] prepare assemble before this step */ }\n\t\t}\n\t\tconst assembly = await this.loopCtx.systemPrompt.assemble(assembleContextFor(this, signal));"
+          "pattern": "\t\tconst claimed = this.inbox.claim(target, position.turn);\n\t\tconst selection = this.model.current();",
+          "replace": "\t\tconst claimed = this.inbox.claim(target, position.turn);\n\t\tconst dshPurgePrepare = globalThis.__dshPurgePrepareAssemble;\n\t\tif (typeof dshPurgePrepare === \"function\") {\n\t\t\ttry { dshPurgePrepare(this.loopCtx); } catch { /* [dsh-purge] prepare assemble before this step */ }\n\t\t}\n\t\tconst selection = this.model.current();"
         }
       ],
       "markers": [
@@ -1170,8 +1170,8 @@
       ],
       "replacements": [
         {
-          "pattern": "\t\t\t\tif (turnEnds && decision.messages.length === 0) break;\n\t\t\t\tif (phase.step === 0 && decision.messages.length === 0) {\n",
-          "replace": "\t\t\t\tif (turnEnds && (decision.messages?.length ?? 0) === 0) break; // [dsh-purge] guard undefined messages\n\t\t\t\tif (phase.step === 0 && (decision.messages?.length ?? 0) === 0) { // [dsh-purge] guard undefined messages\n"
+          "pattern": "\t\t\t\t\tif (turnEnds && decision.messages.length === 0) break;\n\t\t\t\t\tif (phase.step === 0 && decision.messages.length === 0) {\n",
+          "replace": "\t\t\t\t\tif (turnEnds && (decision.messages?.length ?? 0) === 0) break; // [dsh-purge] guard undefined messages\n\t\t\t\t\tif (phase.step === 0 && (decision.messages?.length ?? 0) === 0) { // [dsh-purge] guard undefined messages\n"
         }
       ],
       "markers": [
@@ -1438,8 +1438,7 @@
       "layer_en": "Tools",
       "desc": "PTC / run_code：沙箱加宽句改为自动放行 / run_code sandbox escalation auto-granted",
       "file": [
-        "dsh-tools",
-        "dsh-tools-ptc"
+        "dsh-tool-executor-ptc"
       ],
       "optional": true,
       "skipIfMarked": true,
@@ -1501,34 +1500,17 @@
       "layer_en": "Code",
       "desc": "无审批通道时放行；用户点拒绝仍 deny / fail-open only without UI channel",
       "file": [
-        "dsh-tools",
-        "dsh-tools-types"
+        "dsh-tools-pipeline"
       ],
       "optional": true,
       "replacements": [
-        {
-          "pattern": "\t\tif (approval === undefined) return {\n\t\t\tdecision: {\n\t\t\t\tkind: \"deny\",\n\t\t\t\treason: ask.reason ?? `tool \"${exec.name}\" requires approval (not yet supported)`\n\t\t\t},\n\t\t\tapprovalCancelled: false\n\t\t};",
-          "replace": "\t\tif (approval === undefined) return { decision: { kind: \"allow\" }, approvalCancelled: false }; // [dsh-purge] no approval service → allow\n"
-        },
         {
           "pattern": "        if (approval === undefined) {\n            return {\n                decision: { kind: 'deny', reason: ask.reason ?? `tool \"${exec.name}\" requires approval (not yet supported)` },\n                approvalCancelled: false,\n            };\n        }",
           "replace": "        if (approval === undefined) {\n            return { decision: { kind: 'allow' }, approvalCancelled: false }; // [dsh-purge] no approval service → allow\n        }"
         },
         {
-          "pattern": "\t\tif (exec.agent === undefined) return {\n\t\t\tdecision: {\n\t\t\t\tkind: \"deny\",\n\t\t\t\treason: `tool \"${exec.name}\" requires approval, but the call has no agent to route it through`\n\t\t\t},\n\t\t\tapprovalCancelled: false\n\t\t};",
-          "replace": "\t\tif (exec.agent === undefined) return { decision: { kind: \"allow\" }, approvalCancelled: false }; // [dsh-purge] no agent → allow\n"
-        },
-        {
           "pattern": "        if (exec.agent === undefined) {\n            return {\n                decision: { kind: 'deny', reason: `tool \"${exec.name}\" requires approval, but the call has no agent to route it through` },\n                approvalCancelled: false,\n            };\n        }",
           "replace": "        if (exec.agent === undefined) {\n            return { decision: { kind: 'allow' }, approvalCancelled: false }; // [dsh-purge] no agent → allow\n        }"
-        },
-        {
-          "pattern": "\t\tcase \"unavailable\": return {\n\t\t\tdecision: {\n\t\t\t\tkind: \"deny\",\n\t\t\t\treason: `tool \"${exec.name}\" requires approval, but no approval channel is available`\n\t\t\t},\n\t\t\tapprovalCancelled: false\n\t\t};",
-          "replace": "\t\tcase \"unavailable\": return { decision: { kind: \"allow\" }, approvalCancelled: false }; // [dsh-purge] unavailable channel → allow\n"
-        },
-        {
-          "pattern": "            case 'unavailable':\n                return {\n                    decision: { kind: 'deny', reason: `tool \"${exec.name}\" requires approval, but no approval channel is available` },\n                    approvalCancelled: false,\n                };",
-          "replace": "            case 'unavailable':\n                return { decision: { kind: 'allow' }, approvalCancelled: false }; // [dsh-purge] unavailable channel → allow\n"
         },
         {
           "pattern": "\t\tif (approval === void 0) return {\n\t\t\tdecision: {\n\t\t\t\tkind: \"deny\",\n\t\t\t\treason: ask.reason ?? `tool \"${exec.name}\" requires approval (not yet supported)`\n\t\t\t},\n\t\t\tapprovalCancelled: false\n\t\t};",
@@ -1798,39 +1780,6 @@
       ],
       "markers": [
         "[dsh-purge-87] hang needle uses LF"
-      ]
-    },
-    {
-      "id": 88,
-      "name": "HUNG_PROMPT_STRICT_NEEDLE",
-      "layer": "代码",
-      "layer_en": "Code",
-      "desc": "ChatML 头和正文尾都在才算挂住，只剩头或只剩尾都重新置顶",
-      "file": [
-        "agent-loop"
-      ],
-      "optional": true,
-      "skipIfMarked": true,
-      "replacements": [
-        {
-          "pattern": "\t\tif (dshPurgeHung && !(dshPurgeTail && dshPurgeNorm.includes(dshPurgeTail)) && !(dshPurgeHead && dshPurgeNorm.includes(dshPurgeHead))) {\n\t\t\trenderedPrompt = dshPurgeHung + (renderedPrompt ? \"\\n\\n\" + renderedPrompt : \"\"); // [dsh-purge-87] hang needle uses LF\n\t\t}",
-          "replace": "\t\tif (dshPurgeHung && !(dshPurgeTail && dshPurgeNorm.includes(dshPurgeTail) && dshPurgeHead && dshPurgeNorm.includes(dshPurgeHead))) { // [dsh-purge-88]\n\t\t\trenderedPrompt = dshPurgeHung + (renderedPrompt ? \"\\n\\n\" + renderedPrompt : \"\"); // [dsh-purge-87] hang needle uses LF\n\t\t}"
-        },
-        {
-          "pattern": "\t\tif (dshPurgeHung && !(dshPurgeTail && dshPurgeNorm.includes(dshPurgeTail)) && !(dshPurgeHead && dshPurgeNorm.includes(dshPurgeHead))) {\n\t\t\tsystem = dshPurgeHung + (system ? \"\\n\\n\" + system : \"\"); // [dsh-purge-87] hang needle uses LF\n\t\t}",
-          "replace": "\t\tif (dshPurgeHung && !(dshPurgeTail && dshPurgeNorm.includes(dshPurgeTail) && dshPurgeHead && dshPurgeNorm.includes(dshPurgeHead))) { // [dsh-purge-88]\n\t\t\tsystem = dshPurgeHung + (system ? \"\\n\\n\" + system : \"\"); // [dsh-purge-87] hang needle uses LF\n\t\t}"
-        },
-        {
-          "pattern": "\t\tif (dshPurgeHung && !(dshPurgeTail && dshPurgeNorm.includes(dshPurgeTail) && dshPurgeHead && dshPurgeNorm.includes(dshPurgeHead))) {\n\t\t\trenderedPrompt = dshPurgeHung + (renderedPrompt ? \"\\n\\n\" + renderedPrompt : \"\"); // [dsh-purge-87] hang needle uses LF\n\t\t}",
-          "replace": "\t\tif (dshPurgeHung && !(dshPurgeTail && dshPurgeNorm.includes(dshPurgeTail) && dshPurgeHead && dshPurgeNorm.includes(dshPurgeHead))) { // [dsh-purge-88]\n\t\t\trenderedPrompt = dshPurgeHung + (renderedPrompt ? \"\\n\\n\" + renderedPrompt : \"\"); // [dsh-purge-87] hang needle uses LF\n\t\t}"
-        },
-        {
-          "pattern": "\t\tif (dshPurgeHung && !(dshPurgeTail && dshPurgeNorm.includes(dshPurgeTail) && dshPurgeHead && dshPurgeNorm.includes(dshPurgeHead))) {\n\t\t\tsystem = dshPurgeHung + (system ? \"\\n\\n\" + system : \"\"); // [dsh-purge-87] hang needle uses LF\n\t\t}",
-          "replace": "\t\tif (dshPurgeHung && !(dshPurgeTail && dshPurgeNorm.includes(dshPurgeTail) && dshPurgeHead && dshPurgeNorm.includes(dshPurgeHead))) { // [dsh-purge-88]\n\t\t\tsystem = dshPurgeHung + (system ? \"\\n\\n\" + system : \"\"); // [dsh-purge-87] hang needle uses LF\n\t\t}"
-        }
-      ],
-      "markers": [
-        "[dsh-purge-88]"
       ]
     },
     {

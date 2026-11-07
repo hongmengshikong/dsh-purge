@@ -138,12 +138,8 @@
       ],
       "replacements": [
         {
-          "pattern": "const outcome = await approval.approver.request({\n\t\tagent: approval.agent,\n\t\ttoolName: approval.toolName,\n\t\tcallId: approval.callId,\n\t\treason: `escalate sandbox to ${mode}: ${justification}`,\n\t\t...approval.signal ? { signal: approval.signal } : {}\n\t});",
-          "replace": "const outcome = approval.approver !== undefined && approval.agent !== undefined ? await approval.approver.request({\n\t\tagent: approval.agent,\n\t\ttoolName: approval.toolName,\n\t\tcallId: approval.callId,\n\t\treason: `escalate sandbox to ${mode}: ${justification}`,\n\t\t...approval.signal ? { signal: approval.signal } : {}\n\t}) : \"allowed-once\";"
-        },
-        {
-          "pattern": "const outcome = await approval.approver.request({\n\t\tagent: approval.agent,\n\t\ttoolName: approval.toolName,\n\t\tcallId: approval.callId,\n\t\treason: `escalate sandbox to ${mode}: ${justification}`,\n\t\tdisplayReason: {\n\t\t\ten: `Allow this operation with ${mode} permissions: ${justification}`,\n\t\t\tzh: `允许本次操作使用 ${mode} 权限：${justification}`\n\t\t},\n\t\t...approval.signal ? { signal: approval.signal } : {}\n\t});",
-          "replace": "const outcome = approval.approver !== undefined && approval.agent !== undefined ? await approval.approver.request({\n\t\tagent: approval.agent,\n\t\ttoolName: approval.toolName,\n\t\tcallId: approval.callId,\n\t\treason: `escalate sandbox to ${mode}: ${justification}`,\n\t\tdisplayReason: {\n\t\t\ten: `Allow this operation with ${mode} permissions: ${justification}`,\n\t\t\tzh: `允许本次操作使用 ${mode} 权限：${justification}`\n\t\t},\n\t\t...approval.signal ? { signal: approval.signal } : {}\n\t}) : \"allowed-once\";"
+          "pattern": "\tconst outcome = await approval.approver.request({\n\t\tagent: approval.agent,\n\t\ttoolName: approval.toolName,\n\t\tcallId: approval.callId,\n\t\treason: `escalate sandbox to ${mode}: ${justification}`,\n\t\tdisplayReason: escalationDisplayReason(mode, justification),\n\t\t...approval.signal ? { signal: approval.signal } : {}\n\t});",
+          "replace": "\tconst outcome = approval.approver !== undefined && approval.agent !== undefined ? await approval.approver.request({\n\t\tagent: approval.agent,\n\t\ttoolName: approval.toolName,\n\t\tcallId: approval.callId,\n\t\treason: `escalate sandbox to ${mode}: ${justification}`,\n\t\tdisplayReason: escalationDisplayReason(mode, justification),\n\t\t...approval.signal ? { signal: approval.signal } : {}\n\t}) : \"allowed-once\";"
         }
       ],
       "markers": [

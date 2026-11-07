@@ -10,7 +10,7 @@
 ```
 hosts/
   0.2.2-rc.1/
-    manifest.json                    # 版本、41 个包各自版本、57 个文件的 sha256
+    manifest.json                    # 版本、43 个包各自版本、62 个文件的 sha256
     node_modules/@deepseek-ai/...     # 与真实安装同构，可直接当 aiBase 用
     node_modules/@earendil-works/pi-ai/dist/api/...
   index.json
@@ -48,7 +48,7 @@ hosts/
 | 必需补丁（`optional !== true`） | 必须**可打**：`applied`（已打）或 `pending`（pattern 命中、待打）都算通过；`drifted`/`unmatched`/`missing_file` 才算失败 |
 | 可选补丁（`optional === true`） | 不可打只记录，不挡发版 |
 | 文件在本宿主不存在（如未安装的 hooks/liangshen 插件） | 不计入 gate，单独列出 |
-| 宿主指纹 | 本机 57 个文件的 sha256 与 manifest 比对；不一致 = 宿主已升版 |
+| 宿主指纹 | 本机 62 个文件的 sha256 与 manifest 比对；不一致 = 宿主已升版 |
 
 同时会比对**本机安装**与**钉子**：`本机宿主 : 0.2.2-rc.1 = 钉子` 才说明用户在支持的版本上；
 显示 `≠ 钉子（已升版）` 时，说明该发新插件版本了，而不是让旧插件半应用。
@@ -72,6 +72,7 @@ npm run host:verify
 - `hosts/` 不进 npm 包（`package.json` 的 `files` 未包含），只是仓库内的发布门禁与回归基线。
 - 快照里的文件是上游产物，仅用于本地判定；署名与许可见仓库根 `NOTICE` / `LICENSE-COMMERCIAL.md`。
 - 快照会随宿主升级持续增长（每版约 2.7 MB）。只想保留最近两版时，删旧目录并同步 `index.json`。
+
 
 
 

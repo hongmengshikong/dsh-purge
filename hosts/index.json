@@ -2,25 +2,15 @@
   "schema": "dsh-purge/host-index@1",
   "note": "正查：宿主版本 → 插件版本；反查：pluginVersion/dshTarget 相同的条目。只有 pinned=true 的那条是当前发版目标。",
   "hosts": {
-    "0.2.1-rc.5": {
-      "manifest": "hosts/0.2.1-rc.5/manifest.json",
-      "pluginVersion": null,
-      "dshTarget": null,
-      "pinned": false,
-      "files": 57,
-      "bytes": 2781996,
-      "source": "npm",
-      "capturedAt": "2026-11-07T17:54:13.275Z"
-    },
     "0.2.2-rc.1": {
       "manifest": "hosts/0.2.2-rc.1/manifest.json",
       "pluginVersion": "0.2.2-rc.1",
       "dshTarget": "0.2.2-rc.1",
       "pinned": true,
-      "files": 57,
-      "bytes": 2848498,
+      "files": 62,
+      "bytes": 3036796,
       "source": "local-install",
-      "capturedAt": "2026-11-07T17:52:56.723Z"
+      "capturedAt": "2026-11-07T18:24:37.299Z"
     }
   }
 }

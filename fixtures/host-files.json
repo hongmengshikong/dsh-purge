@@ -374,6 +374,14 @@
         "sha256": "0ad0b4f4e1cf715c28aeb513a41bc08b09c3c84c36b7f81a60a41ddec7ade3a1"
       }
     ],
+    "deliverable-file-references": [
+      {
+        "path": "<aiBase>\\dsh-deliverable-file-references\\lib\\index.js",
+        "exists": true,
+        "bytes": 2005,
+        "sha256": "6350586366cbffd674f6f922eb38f55387d6b641d5272361b5bad363c327d0e8"
+      }
+    ],
     "llm-deepseek": [
       {
         "path": "<aiBase>\\dsh-llm-deepseek\\lib\\index.js",
@@ -444,6 +452,34 @@
         "exists": true,
         "bytes": 16627,
         "sha256": "595154ed8db690d5bea18dc32e03cbca07fbdf20b55f75fbd33e66480dd20511"
+      }
+    ],
+    "dsh-tools-pipeline": [
+      {
+        "path": "<aiBase>\\dsh-tools\\lib\\pipeline.js",
+        "exists": true,
+        "bytes": 34464,
+        "sha256": "f6c850cefce30831c4c5f160e831856b105935331bacd1ae0823129001614bc6"
+      },
+      {
+        "path": "<aiBase>\\dsh-tools\\lib\\types\\pipeline.js",
+        "exists": true,
+        "bytes": 31754,
+        "sha256": "17952abbbb42b85deb49254a83f1d839c7e0a15836d2601614f733298f177d19"
+      }
+    ],
+    "dsh-tool-executor-ptc": [
+      {
+        "path": "<aiBase>\\dsh-tool-executor-ptc\\lib\\index.js",
+        "exists": true,
+        "bytes": 80588,
+        "sha256": "aab21d46e71316a97ad2a071ab7d8d21aa876c4192a4cd98094f61b2800cad9a"
+      },
+      {
+        "path": "<aiBase>\\dsh-tool-executor-ptc\\lib\\types\\ptc.js",
+        "exists": true,
+        "bytes": 39487,
+        "sha256": "b6e9ebda4104c21069688cef2be4524814f0b7d48ca71e01362a11b15cc31c05"
       }
     ],
     "sandbox-policy": [

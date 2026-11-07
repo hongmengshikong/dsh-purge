@@ -1,7 +1,7 @@
 {
   "schema": "dsh-purge/host-snapshot@1",
   "hostVersion": "0.2.2-rc.1",
-  "capturedAt": "2026-11-07T17:52:56.723Z",
+  "capturedAt": "2026-11-07T18:24:37.299Z",
   "installRoot": "<installRoot>",
   "packages": {
     "@deepseek-ai/dsh-acp-app": "0.2.2-rc.1",
@@ -13,6 +13,7 @@
     "@deepseek-ai/dsh-client-ui-conversation": "0.2.2-rc.1",
     "@deepseek-ai/dsh-client-ui-deliverables": "0.2.2-rc.1",
     "@deepseek-ai/dsh-compaction-tool-result-pruner": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-deliverable-file-references": "0.2.2-rc.1",
     "@deepseek-ai/dsh-experimental-auto-review": "0.2.2-rc.1",
     "@deepseek-ai/dsh-fs-observation-policy": "0.2.2-rc.1",
     "@deepseek-ai/dsh-fs-sandbox": "0.2.2-rc.1",
@@ -36,6 +37,7 @@
     "@deepseek-ai/dsh-subagent": "0.2.2-rc.1",
     "@deepseek-ai/dsh-system-prompt": "0.2.2-rc.1",
     "@deepseek-ai/dsh-tool-bash": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-tool-executor-ptc": "0.2.2-rc.1",
     "@deepseek-ai/dsh-tool-fs": "0.2.2-rc.1",
     "@deepseek-ai/dsh-tool-pwsh": "0.2.2-rc.1",
     "@deepseek-ai/dsh-tool-subagent": "0.2.2-rc.1",
@@ -47,10 +49,10 @@
     "@earendil-works/pi-ai": "1.5.0"
   },
   "counts": {
-    "files": 57,
-    "host": 57,
+    "files": 62,
+    "host": 62,
     "external": 0,
-    "bytes": 2848498
+    "bytes": 3036796
   },
   "files": [
     {
@@ -131,6 +133,14 @@
       "sha256": "e86442e9a2403c392482b9035916e5610c251d62f3581892866404d69c064254",
       "role": "host",
       "rel": "@deepseek-ai/dsh-compaction-tool-result-pruner/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "deliverable-file-references",
+      "bytes": 2005,
+      "sha256": "6350586366cbffd674f6f922eb38f55387d6b641d5272361b5bad363c327d0e8",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-deliverable-file-references/lib/index.js",
       "abs": null
     },
     {
@@ -358,6 +368,22 @@
       "abs": null
     },
     {
+      "key": "dsh-tool-executor-ptc",
+      "bytes": 80588,
+      "sha256": "aab21d46e71316a97ad2a071ab7d8d21aa876c4192a4cd98094f61b2800cad9a",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-tool-executor-ptc/lib/index.js",
+      "abs": null
+    },
+    {
+      "key": "dsh-tool-executor-ptc",
+      "bytes": 39487,
+      "sha256": "b6e9ebda4104c21069688cef2be4524814f0b7d48ca71e01362a11b15cc31c05",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-tool-executor-ptc/lib/types/ptc.js",
+      "abs": null
+    },
+    {
       "key": "tool-fs",
       "bytes": 76992,
       "sha256": "6c83d4ed7c66604bd0a52bda3f7d08de12518c7e3595c3cc08d937bbb981724e",
@@ -406,11 +432,27 @@
       "abs": null
     },
     {
+      "key": "dsh-tools-pipeline",
+      "bytes": 34464,
+      "sha256": "f6c850cefce30831c4c5f160e831856b105935331bacd1ae0823129001614bc6",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-tools/lib/pipeline.js",
+      "abs": null
+    },
+    {
       "key": "dsh-tools-types",
       "bytes": 16627,
       "sha256": "595154ed8db690d5bea18dc32e03cbca07fbdf20b55f75fbd33e66480dd20511",
       "role": "host",
       "rel": "@deepseek-ai/dsh-tools/lib/types/index.js",
+      "abs": null
+    },
+    {
+      "key": "dsh-tools-pipeline",
+      "bytes": 31754,
+      "sha256": "17952abbbb42b85deb49254a83f1d839c7e0a15836d2601614f733298f177d19",
+      "role": "host",
+      "rel": "@deepseek-ai/dsh-tools/lib/types/pipeline.js",
       "abs": null
     },
     {
