@@ -43,7 +43,9 @@
     "snapshot:status": "node scripts/snapshot-status.mjs",
     "patches:dump": "node scripts/dump-patches.mjs",
     "patches:split": "node scripts/split-patches.mjs",
-    "verify:patches": "node scripts/verify-patches.mjs"
+    "verify:patches": "node scripts/verify-patches.mjs",
+    "host:snapshot": "node scripts/host-snapshot.mjs",
+    "host:verify": "node scripts/host-verify.mjs"
   },
   "license": "Apache-2.0",
   "keywords": [
@@ -100,9 +102,7 @@
   "engines": {
     "node": ">=18"
   },
-  "dshTarget": "0.2.1-rc.5",
-  "dshTargets": [
-    "0.2.1-rc.5",
-    "0.2.1-rc.2"
-  ]
+  "dshTarget": "0.2.2-rc.1",
+  "dshPin": "one-plugin-version-per-host-version"
 }
+

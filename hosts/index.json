@@ -1,0 +1,13 @@
+{
+  "schema": "dsh-purge/host-index@1",
+  "hosts": {
+    "0.2.2-rc.1": {
+      "manifest": "hosts/0.2.2-rc.1/manifest.json",
+      "pluginVersion": "1.1.92",
+      "dshTarget": "0.2.2-rc.1",
+      "files": 57,
+      "bytes": 2848498,
+      "capturedAt": "2026-11-07T17:49:51.271Z"
+    }
+  }
+}
