@@ -1,10 +1,9 @@
 {
   "schema": "dsh-purge/archived-patches@1",
-  "note": "留档不加载：#40 旧版特有、#47 锚点已变待重写、#88 被 #87 改写取代。#49 经验证在 0.2.2 仍适用，已恢复加载。",
+  "note": "留档不加载：#40 旧版特有、#88 被 #87 改写取代。#47/#49 已恢复加载。",
   "source": "patches/legacy/tools-legacy.json",
   "ids": [
     40,
-    47,
     88
   ],
   "items": [
@@ -12,11 +11,6 @@
       "id": 40,
       "name": "COMPLETE_PROMPT_KEEP_INJECT",
       "layer": "0.1.5 兼容"
-    },
-    {
-      "id": 47,
-      "name": "ANTHROPIC_OAUTH_NO_CLAUDE_IDENTITY",
-      "layer": "0.2.0 兼容"
     },
     {
       "id": 88,

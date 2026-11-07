@@ -1868,6 +1868,27 @@
         "[dsh-purge] neutral OAuth UA"
       ],
       "markersAny": true
+    },
+    {
+      "id": 47,
+      "name": "ANTHROPIC_OAUTH_NO_CLAUDE_IDENTITY",
+      "layer": "0.2.0 兼容",
+      "layer_en": "0.2.0",
+      "desc": "Anthropic OAuth 不再强插 Claude Code 首段系统提示 / drop Claude Code OAuth system prefix",
+      "file": [
+        "pi-ai-anthropic-messages"
+      ],
+      "optional": true,
+      "skipIfMarked": true,
+      "replacements": [
+        {
+          "pattern": "    // For OAuth tokens, we MUST include Claude Code identity\n    if (isOAuthToken) {",
+          "replace": "    // [dsh-purge] OAuth no longer prepends Claude Code identity\n    if (false) {"
+        }
+      ],
+      "markers": [
+        "[dsh-purge] OAuth no longer prepends Claude Code identity"
+      ]
     }
   ]
 }
