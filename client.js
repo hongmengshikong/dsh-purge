@@ -347,6 +347,7 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"restart.fail": "失败: {error}",
 			"restart.notStarted": "重启没有开始，客户端还在。不会自动再试。",
 			"restart.already": "这一次重启已经开始，不会再重启一次。",
+			"restart.noop": "已经写入，无需重启。",
 			"restart.confirm": "清洗已完成，重启后生效。",
 			"restart.confirm.desktop": "清洗已完成，重启桌面应用后生效。",
 			"restart.ask.title": "要现在重启吗",
@@ -708,6 +709,7 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"restart.fail": "Failed: {error}",
 			"restart.notStarted": "Restart did not start. This client is still open, and it will not try again by itself.",
 			"restart.already": "This restart already started. It will not restart again.",
+			"restart.noop": "Already applied. No restart needed.",
 			"restart.confirm": "Apply finished. Restart to take effect.",
 			"restart.confirm.desktop": "Apply finished. Restart the desktop app to take effect.",
 			"restart.ask.title": "Restart now?",
@@ -1224,7 +1226,7 @@ body[data-ds-dark-theme] .rt-rep-step-no,.dshp-dock[data-theme="dusk"] .rt-rep-s
 			return t("flow." + id);
 		}
 
-		function ApplyFlow({ progress, busy, t }) {
+		function ApplyFlow({ progress, busy, t, settled }) {
 			const kind = (progress && progress.kind) || "apply";
 			const steps = FLOW_STEPS[kind] || FLOW_STEPS.apply;
 			const stage = (progress && progress.stage) || "idle";
@@ -1237,7 +1239,10 @@ body[data-ds-dark-theme] .rt-rep-step-no,.dshp-dock[data-theme="dusk"] .rt-rep-s
 			},
 				h("span", { className: "dshp-flow-kind" }, t("flow." + kind)),
 				steps.flatMap((id, i) => {
-					const done = idx > i || (stage === "done" && !failed);
+					// 重启后 apply_progress 归零为 idle：只要补丁已全绿，就把流程显示为已完成，
+					// 否则用户每次重启都会看到「什么都没做」。
+					const idleDone = !active && !failed && stage === "idle" && settled === true;
+					const done = idleDone || idx > i || (stage === "done" && !failed);
 					const cur = active && idx === i && stage !== "idle";
 					const bad = failed && idx === i;
 					const nodes = [];
@@ -1584,6 +1589,11 @@ body[data-ds-dark-theme] .rt-rep-step-no,.dshp-dock[data-theme="dusk"] .rt-rep-s
 			const [updateJob, setUpdateJob] = useState(null);
 			const [askRestart, setAskRestart] = useState(false);
 			const suppressRestartAsk = useRef(false);
+			// 粘性标记：有补丁已写入、还没重启 → 刷新/轮询都会重新弹。
+			// 必须放在所有 useState/useRef 之后，否则依赖数组求值时会踩 TDZ（页面会白屏）。
+			useEffect(() => {
+				if (state && state.restart_pending && !suppressRestartAsk.current) setAskRestart(true);
+			}, [state]);
 			const [askUninstall, setAskUninstall] = useState(false);
 			const [uninstallBusy, setUninstallBusy] = useState(false);
 			const [notice, setNotice] = useState({ kind: "idle", text: "" });
@@ -1906,10 +1916,17 @@ body[data-ds-dark-theme] .rt-rep-step-no,.dshp-dock[data-theme="dusk"] .rt-rep-s
 								return;
 							}
 							if (action === "apply") {
-								setNotice({ kind: "ok", text: tr("ok.done") });
 								loadAll();
 								suppressRestartAsk.current = false;
-								setAskRestart(true);
+								// 与 756df40（1.1.92）一致：这次真的写了补丁就弹重启；
+								// 全是 already（applied=0）才提示「已经写入，无需重启」。
+								const didWork = Number(d.applied || 0) > 0;
+								if (d.restarting || d.needs_full_quit || didWork) {
+									setNotice({ kind: "ok", text: tr("ok.done") });
+									setAskRestart(true);
+								} else {
+									setNotice({ kind: "ok", text: tr("restart.noop") });
+								}
 								return;
 							}
 							setNotice({ kind: "ok", text: tr("ok.done") });
@@ -2189,7 +2206,12 @@ body[data-ds-dark-theme] .rt-rep-step-no,.dshp-dock[data-theme="dusk"] .rt-rep-s
 					h("div", { className: "dshp-metric" }, h("div", { className: "dshp-skel" }), h("div", { className: "dshp-skel", style: { width: "40%" } })),
 					h("div", { className: "dshp-metric" }, h("div", { className: "dshp-skel" }), h("div", { className: "dshp-skel", style: { width: "40%" } })),
 				),
-				h(ApplyFlow, { progress: s && s.apply_progress, busy: patchBusy || uninstallBusy, t: t }),
+				h(ApplyFlow, {
+					progress: s && s.apply_progress,
+					busy: patchBusy || uninstallBusy,
+					t: t,
+					settled: Boolean(s) && Number(s.patches_ready) > 0 && Number(s.patches_drifted) === 0 && (Number(s.patches_applied) + Number(s.patches_skipped) >= Number(s.patches_ready)),
+				}),
 				h("div", { className: "dshp-bar", "aria-hidden": "true" }, h("i", { style: { transform: "scaleX(" + (pct / 100) + ")" } })),
 				h(PatchGroups, { state: s }),
 				h(HooksDenySection, { onSaved: loadAll }),
