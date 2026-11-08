@@ -22,8 +22,8 @@
       {
         "path": "<aiBase>\\dsh-web-app\\lib\\index.js",
         "exists": true,
-        "bytes": 7844,
-        "sha256": "6662ca712368c56fb8818efa53039ef92ce215a328a76b9cdd5e1bed624a0e84"
+        "bytes": 7976,
+        "sha256": "f061f660fd280af4a7a91f75e4a738a992fd21f672b30aedcd9a189695125445"
       }
     ],
     "harness-dev-context": [
@@ -54,88 +54,88 @@
       {
         "path": "<aiBase>\\dsh-web-app\\presets\\standard.patch.yml",
         "exists": true,
-        "bytes": 6858,
-        "sha256": "3006cc3780cddaa7fb0089e5854e6bbef4409cf1d425930fd835226b95660afd"
+        "bytes": 6931,
+        "sha256": "9d024855e0e92d1894d82f0f9f6fd6cc01bfc92cc1fabe9894ce9cb055d0432f"
       }
     ],
     "user-approval": [
       {
         "path": "<aiBase>\\dsh-user-approval\\lib\\types\\index.js",
         "exists": true,
-        "bytes": 11084,
-        "sha256": "ceb6c078357018aad461928a133e559e0cf36bc331b495969690e10037cb8747"
+        "bytes": 11072,
+        "sha256": "1b32e22c6dc4a1042b67d5418664217b52925ff2184725e9480d476b2dc0beac"
       }
     ],
     "user-approval-code": [
       {
         "path": "<aiBase>\\dsh-user-approval\\lib\\index.js",
         "exists": true,
-        "bytes": 8979,
-        "sha256": "45b7c170b6897f15a338037b1951997a1b99018c30b5fc95f7e08ad798075be2"
+        "bytes": 8846,
+        "sha256": "24681642bc2f578515daf5752c6990d72ba90900af19590c221a41be77f701ba"
       }
     ],
     "escalation": [
       {
         "path": "<aiBase>\\dsh-sandbox\\lib\\index.js",
         "exists": true,
-        "bytes": 19652,
-        "sha256": "9ece3e7b04d5526441e2439431d769acf67abc46fa49de000dd9c792893eb5e7"
+        "bytes": 19064,
+        "sha256": "83a468404036bb1f625f63f6c2fe869a4553ccd945f006475ac07e6b4c2cb007"
       }
     ],
     "fs-sandbox": [
       {
         "path": "<aiBase>\\dsh-fs-sandbox\\lib\\index.js",
         "exists": true,
-        "bytes": 9220,
-        "sha256": "f4edd14bf48f8d5bfdea10a61c6651ccde99f2d08a79855746ad2a8d89c6fb73"
+        "bytes": 8767,
+        "sha256": "1464eb5e2ba3715a1752d7f4290666a5048371ede21eecf09d1f6c64e7196534"
       }
     ],
     "sandbox-local": [
       {
         "path": "<aiBase>\\dsh-sandbox-local\\lib\\index.js",
         "exists": true,
-        "bytes": 23136,
-        "sha256": "4399dae3ca786b032d232bda094f3f395c151f0258b1373e640eb4ba0d04ba3f"
+        "bytes": 22694,
+        "sha256": "0084d8471a9536ce30610ac00258f1f27308eae216ada22414806fb7b3134457"
       }
     ],
     "base": [
       {
         "path": "<aiBase>\\dsh-base\\cordis.patch.yml",
         "exists": true,
-        "bytes": 20962,
-        "sha256": "b65a86e55f02d863286bb6faac8ae292c18fffca3c8aa4491b600fa4dd6b48d0"
+        "bytes": 21093,
+        "sha256": "0f92d92f84afb0632ec2d9ac3bbfdc6ec8a654f1dcb7939603ce1ea27dcaa345"
       }
     ],
     "settings": [
       {
         "path": "<aiBase>\\dsh-settings\\lib\\index.js",
         "exists": true,
-        "bytes": 22665,
-        "sha256": "041a2682ed77a7025ceb9bf659b80db8b788c338cd1aa644f0bcc6bc122a4091"
+        "bytes": 27650,
+        "sha256": "c3b695ac67146015dc4dfe79fa5377cb1ebbd4b607992bc8c8c8009555b32c0e"
       }
     ],
     "fs-observation-policy": [
       {
         "path": "<aiBase>\\dsh-fs-observation-policy\\lib\\index.js",
         "exists": true,
-        "bytes": 4359,
-        "sha256": "f4268f8f10f1137eb84ff4c01ef87bb924f4bffa0457e6f69d6e271ae9083b11"
+        "bytes": 4234,
+        "sha256": "cdf4c4f26faff23b254719c7ab7ef48fe863fd70587556a1ca4764ace7efc09c"
       }
     ],
     "repeat-tool-reminder": [
       {
         "path": "<aiBase>\\dsh-repeat-tool-reminder\\lib\\index.js",
         "exists": true,
-        "bytes": 93441,
-        "sha256": "6d582ef007597eacd69f81a044424107f564ec3a5ad0b04ebe031d80f14488a8"
+        "bytes": 92925,
+        "sha256": "512abbb6a061b0c6c84b80baad21916e67794a3fac187ce663eaeea9bf63dce7"
       }
     ],
     "compaction-tool-result-pruner": [
       {
         "path": "<aiBase>\\dsh-compaction-tool-result-pruner\\lib\\index.js",
         "exists": true,
-        "bytes": 7570,
-        "sha256": "e86442e9a2403c392482b9035916e5610c251d62f3581892866404d69c064254"
+        "bytes": 7553,
+        "sha256": "cb89cd266e4063e6f50dc4b0d6640943dd41d7d197dd775b71db8fc6a9c93a91"
       }
     ],
     "tool-fs": [
@@ -150,24 +150,24 @@
       {
         "path": "<aiBase>\\dsh-tool-subagent\\lib\\index.js",
         "exists": true,
-        "bytes": 28096,
-        "sha256": "e73d2fb1753421bfd80e8adf38a3cafe93a4fa2516e07f9764279a880821734e"
+        "bytes": 28145,
+        "sha256": "224423377e79db6153c3b6891ac4957b497e41bc7631286b11f5effaa921e366"
       }
     ],
     "subagent": [
       {
         "path": "<aiBase>\\dsh-subagent\\lib\\index.js",
         "exists": true,
-        "bytes": 142576,
-        "sha256": "5aad8aadee1879f1e8a878431630f885adbe6f9ee9cb1832838abbc56bc1fbea"
+        "bytes": 142389,
+        "sha256": "2a85a14f100e3ee0f3dc385dd45cb125b201caf0035921958a0137bc0eb2edee"
       }
     ],
     "subagent-types": [
       {
         "path": "<aiBase>\\dsh-subagent\\lib\\types\\child-agent.js",
         "exists": true,
-        "bytes": 10463,
-        "sha256": "ee4ff465cf9094b10c812f319db5ca33db7431aeb6429bb42ac2d8476470cce5"
+        "bytes": 10248,
+        "sha256": "363ebdfd94fd5e3f6e093f088443381a9b9e98c46e2bdd3b82366f81a738c946"
       }
     ],
     "base-package": [
@@ -182,32 +182,32 @@
       {
         "path": "<aiBase>\\dsh-web-app\\presets\\standard.patch.yml",
         "exists": true,
-        "bytes": 6858,
-        "sha256": "3006cc3780cddaa7fb0089e5854e6bbef4409cf1d425930fd835226b95660afd"
+        "bytes": 6931,
+        "sha256": "9d024855e0e92d1894d82f0f9f6fd6cc01bfc92cc1fabe9894ce9cb055d0432f"
       }
     ],
     "preset-cordis": [
       {
         "path": "<aiBase>\\dsh-web-app\\presets\\cordis.patch.yml",
         "exists": true,
-        "bytes": 7434,
-        "sha256": "0e8f611644b3c36249808c4d7eb7a40d78006d04da6b55eef1a42797a5a34355"
+        "bytes": 7488,
+        "sha256": "02e24f835db08c1ac19bc3c0484016e6fc81f7820052452e1f5e177e5254fdf4"
       }
     ],
     "preset-minimal": [
       {
         "path": "<aiBase>\\dsh-web-app\\presets\\minimal.patch.yml",
         "exists": true,
-        "bytes": 3724,
-        "sha256": "a2a9ba1c9c392a45466708f18bc0aefbf300577f9b544dc06049f73a8a5b3267"
+        "bytes": 3683,
+        "sha256": "34f78e889bdac3f2372ee4f7152571f4d6fbffaf9f2ed6eb93c63264fa8d75bc"
       }
     ],
     "preset-ptc": [
       {
         "path": "<aiBase>\\dsh-web-app\\presets\\ptc.patch.yml",
         "exists": true,
-        "bytes": 6963,
-        "sha256": "ce02148b1fd575cc93071744180468cd305bdcd50dbfdd3b9b0605c5281d283d"
+        "bytes": 7036,
+        "sha256": "b5688b8a2baa154e02e5f550955727d3335851e111093959efa576c93321e391"
       }
     ],
     "preset-acp-app": [
@@ -230,8 +230,8 @@
       {
         "path": "<aiBase>\\dsh-sdk-minimal\\cordis.patch.yml",
         "exists": true,
-        "bytes": 5815,
-        "sha256": "e4d4af718a8876ab280df474b5902aaf2fb47a899301962a6ff919f7f2beabd5"
+        "bytes": 5739,
+        "sha256": "3ffc521e694e5df78134ffa39cb6d6b6c778d2901789ea6efbfd28bde14842f0"
       }
     ],
     "tool-bash": [
@@ -254,64 +254,64 @@
       {
         "path": "<aiBase>\\dsh-persona\\lib\\index.js",
         "exists": true,
-        "bytes": 2163,
-        "sha256": "1e9dd7f0dfd87cbff6486b7ca043d2e1b863a2a56b99106a4bf74831591266d5"
+        "bytes": 2280,
+        "sha256": "dc14afff0654b652cccaca9d015ff3b6f084d01254be3e6c1a79872cb2b8d968"
       }
     ],
     "session-format-v0": [
       {
         "path": "<aiBase>\\dsh-session-format-v0-to-v1\\lib\\index.js",
         "exists": true,
-        "bytes": 105495,
-        "sha256": "130bd453ae418537f423ecc9419d1184ac9d66d501101eedbc7f721b0bdabd91"
+        "bytes": 105457,
+        "sha256": "387f24498c6b5b7cc566681b38895ba36f842e451d29bb713f2006ac1231f988"
       }
     ],
     "system-prompt": [
       {
         "path": "<aiBase>\\dsh-system-prompt\\lib\\index.js",
         "exists": true,
-        "bytes": 19994,
-        "sha256": "18b692b03bbb717589085f63b126cbcf22963763c5a0565bb3a7a5d254e8e4a7"
+        "bytes": 20215,
+        "sha256": "4b6e0db899b45df79c042441e352f6c128e74b7dff80513c8ef4d913611e3c81"
       }
     ],
     "tool-web": [
       {
         "path": "<aiBase>\\dsh-tool-web\\lib\\index.js",
         "exists": true,
-        "bytes": 36568,
-        "sha256": "129af8e6bf485d47d3f5f562877b5c266fd57f1a5cc14bfebacc2780b2837d46"
+        "bytes": 36512,
+        "sha256": "bc4879458d26acde0ff43f2390b3c77ce18f85c34f76c459fec844e28a9a3bc5"
       }
     ],
     "api-session-controller": [
       {
         "path": "<aiBase>\\dsh-api-session-controller\\lib\\index.js",
         "exists": true,
-        "bytes": 159265,
-        "sha256": "4cf6c66e65cce865d270fa89405b96d048ffa62e493e4ffbd1a826be2207a4cd"
+        "bytes": 159347,
+        "sha256": "3940393fa4cab1a6fa841ffc18c850c9e88ee3c8d43854a19e672fd284ab254c"
       }
     ],
     "pi-ai-completions": [
       {
         "path": "<installRoot>\\@earendil-works\\pi-ai\\dist\\api\\openai-completions.js",
         "exists": true,
-        "bytes": 64433,
-        "sha256": "df81627c173163d0b918692f4a3b87e22cbdb5883b809e4d70d6152d1e68d948"
+        "bytes": 64628,
+        "sha256": "44943a0af44fab11fea45c9bd303b786e3f2d21753edea30890205ba337d2be9"
       }
     ],
     "pi-ai-responses-shared": [
       {
         "path": "<installRoot>\\@earendil-works\\pi-ai\\dist\\api\\openai-responses-shared.js",
         "exists": true,
-        "bytes": 36004,
-        "sha256": "00796997da00cd4cb77ae8c1c4bb92a3d4a4a4dd5bea18524de7173e4f877e4c"
+        "bytes": 36199,
+        "sha256": "068ae1307ead70419815357eb3893a1891b2cd6a9f8fe8cc685257e4d37dd523"
       }
     ],
     "pi-ai-anthropic-messages": [
       {
         "path": "<installRoot>\\@earendil-works\\pi-ai\\dist\\api\\anthropic-messages.js",
         "exists": true,
-        "bytes": 61077,
-        "sha256": "992daf485e2d479ac1df3886019946d0bf512ef6517ec730ce4c7315f9472ecc"
+        "bytes": 61135,
+        "sha256": "87fac1c906dfd00fc93e59725af94823b549b58df89f5a6b506b850a06874d78"
       }
     ],
     "session-reference": [
@@ -338,32 +338,32 @@
       {
         "path": "<aiBase>\\dsh-permission-presets\\lib\\index.js",
         "exists": true,
-        "bytes": 16851,
-        "sha256": "08f06dac668d2639e963753c127230ec8818b47be72e5aed7f5bf637c9f6c16e"
+        "bytes": 17038,
+        "sha256": "b5dc259d583f2633024147b45621362e05380404247b4de65a73749a0682281e"
       }
     ],
     "permission-presets-types": [
       {
         "path": "<aiBase>\\dsh-permission-presets\\lib\\types\\index.js",
         "exists": true,
-        "bytes": 20781,
-        "sha256": "005b44a742f6270846b017b5c7b0ff25a2ca4e306b15b3c2c181c7c0ea3c8268"
+        "bytes": 20968,
+        "sha256": "5e646c4da09c21c2d571d14fb6d032c1b04ccdbe2b5dc2194158a7ae6adac702"
       }
     ],
     "session-log-deepseek": [
       {
         "path": "<aiBase>\\dsh-session-log-deepseek\\lib\\index.js",
         "exists": true,
-        "bytes": 9148,
-        "sha256": "a4b5cc74b9bd9705e107ab4c8eb2395a5c580507e2b5fbd8eff09377f41ca0cf"
+        "bytes": 9187,
+        "sha256": "d1390c51a8c1494fd51e9c0a5efe96239658e022310476b32852697ecd6742cd"
       }
     ],
     "session-log-deepseek-types": [
       {
         "path": "<aiBase>\\dsh-session-log-deepseek\\lib\\types\\index.js",
         "exists": true,
-        "bytes": 11852,
-        "sha256": "4a046a87e4683e927ea05fe1cf3e2ed443af649a5372962df433e1e4aaee33eb"
+        "bytes": 11891,
+        "sha256": "e331f59c0e9ac17b58757a731a8236683b48e548490b10f293373731bfeb9b4d"
       }
     ],
     "deliverables-prompt": [
@@ -378,64 +378,64 @@
       {
         "path": "<aiBase>\\dsh-deliverable-file-references\\lib\\index.js",
         "exists": true,
-        "bytes": 2005,
-        "sha256": "6350586366cbffd674f6f922eb38f55387d6b641d5272361b5bad363c327d0e8"
+        "bytes": 1937,
+        "sha256": "52d49b662c4809783d14cc4e2ea95c1dbca5bee985fac03ba1b2cdbbb18652c9"
       }
     ],
     "llm-deepseek": [
       {
         "path": "<aiBase>\\dsh-llm-deepseek\\lib\\index.js",
         "exists": true,
-        "bytes": 127859,
-        "sha256": "955dc7bc7ca6c857ff4a7e373b87c143b96a4c43fc80325b67dc0982600dcc75"
+        "bytes": 127748,
+        "sha256": "263dcd84b4c97b19c6fdc85cc431f81bf185922682d17c4c884132514b59af1d"
       }
     ],
     "session": [
       {
         "path": "<aiBase>\\dsh-session\\lib\\index.js",
         "exists": true,
-        "bytes": 96127,
-        "sha256": "6fad466aa1f7aa64bfa038681ead5721f66c88e9891e25d357d2b8edbccd5494"
+        "bytes": 96375,
+        "sha256": "cfa7963b0ce1e660bd2815b66cb3e4b86d55a6534603f50e785d71ef0864e995"
       }
     ],
     "agent-loop": [
       {
         "path": "<aiBase>\\dsh-agent-loop\\lib\\index.js",
         "exists": true,
-        "bytes": 66629,
-        "sha256": "a6fa8e0c7c90191caf5f4a3bb5c624a86e9845cf3c79d020b71420d0e20ae4c1"
+        "bytes": 67849,
+        "sha256": "22d915e2c689f9251fd968628599077a9904845e79c4e7fc8ab73aa5ae4a0502"
       }
     ],
     "app-boot": [
       {
         "path": "<aiBase>\\dsh-app-boot\\lib\\index.js",
         "exists": true,
-        "bytes": 225678,
-        "sha256": "346f832224737cd9ab1b5e37d111ae232fdd78b5ab892fa3179c112baf6f0a22"
+        "bytes": 226030,
+        "sha256": "5fe6f8568503e0278654527dfbcac50524237bf07449380a59586075f662d38d"
       }
     ],
     "conversation-client": [
       {
         "path": "<aiBase>\\dsh-client-ui-conversation\\lib\\client.js",
         "exists": true,
-        "bytes": 940207,
-        "sha256": "9a37949cc76603ea3a965ce4d0d6ca65885de4a9808345c38748e595ac396378"
+        "bytes": 942655,
+        "sha256": "c85aac2e930685e4cae4ba3b113edfeaceb417dc96f629d52f0521ee4d51cbad"
       }
     ],
     "tool-todo": [
       {
         "path": "<aiBase>\\dsh-tool-todo\\lib\\index.js",
         "exists": true,
-        "bytes": 6670,
-        "sha256": "7391f77f8933e5bfee65b92b121b0979d7a16fe7d55a00033698392cd3703d11"
+        "bytes": 6966,
+        "sha256": "846cdf2bf43507e61ba3b1e403ffa1f655798b5c0f4b3d4d8fb873af8a993dd1"
       }
     ],
     "auto-review": [
       {
         "path": "<aiBase>\\dsh-experimental-auto-review\\lib\\index.js",
         "exists": true,
-        "bytes": 29033,
-        "sha256": "c516e8803facb9c8484f10c81037859826f1b1d0fef098d933ea23b38fd780b3"
+        "bytes": 29111,
+        "sha256": "d1258a57527f15f4e8aedc4ec613170952caba1664525f5576b3011819fbd58d"
       }
     ],
     "dsh-tools": [
@@ -458,36 +458,36 @@
       {
         "path": "<aiBase>\\dsh-tools\\lib\\pipeline.js",
         "exists": true,
-        "bytes": 34464,
-        "sha256": "f6c850cefce30831c4c5f160e831856b105935331bacd1ae0823129001614bc6"
+        "bytes": 34265,
+        "sha256": "a05224ab40fde127296c0deb126f05049624e7baf5a2f12b77edd96c1ef69aa0"
       },
       {
         "path": "<aiBase>\\dsh-tools\\lib\\types\\pipeline.js",
         "exists": true,
-        "bytes": 31754,
-        "sha256": "17952abbbb42b85deb49254a83f1d839c7e0a15836d2601614f733298f177d19"
+        "bytes": 31481,
+        "sha256": "ecffcf3e1f344ee3a01164d3bc4d9d951f7eba603251b9b4802fc77edc810a98"
       }
     ],
     "dsh-tool-executor-ptc": [
       {
         "path": "<aiBase>\\dsh-tool-executor-ptc\\lib\\index.js",
         "exists": true,
-        "bytes": 80588,
-        "sha256": "aab21d46e71316a97ad2a071ab7d8d21aa876c4192a4cd98094f61b2800cad9a"
+        "bytes": 80308,
+        "sha256": "90c467870d35aa4fc48f24cf33a7500a6992683cd179543a623f91800db28489"
       },
       {
         "path": "<aiBase>\\dsh-tool-executor-ptc\\lib\\types\\ptc.js",
         "exists": true,
-        "bytes": 39487,
-        "sha256": "b6e9ebda4104c21069688cef2be4524814f0b7d48ca71e01362a11b15cc31c05"
+        "bytes": 39207,
+        "sha256": "cf985d87f72dab1dbb77cd30a57b0415463c0dbb87619024d3a22aeb372fbc50"
       }
     ],
     "sandbox-policy": [
       {
         "path": "<aiBase>\\dsh-sandbox-policy\\lib\\index.js",
         "exists": true,
-        "bytes": 9063,
-        "sha256": "8eb1674f9c3c2e336efae7ecc734d5197dc8b80bc29f1f1d61bfe0b5a1472188"
+        "bytes": 8921,
+        "sha256": "1d03396e25ab5bf55d736ac483f0b727f79d262b9abf6241306bc9745818d3ba"
       }
     ]
   }
